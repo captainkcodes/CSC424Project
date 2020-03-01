@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Welcome to Schedule Me</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/7.9.3/firebase-app.js"></script>
@@ -14,28 +15,43 @@
     <script defer src="/__/firebase/7.9.3/firebase-storage.js"></script>
     <!-- initialize the SDK after all desired features are loaded -->
     <script defer src="/__/firebase/init.js"></script>
-
-     
-    
   </head>
-  <h1> Schedule Me </h1>
-  <h2> Log-in Page </h2>
+
   <body>
 
+	<div class="container">
     
-     <!-- google login button -->                                      
-    <button onclick="googleLogin()">   
+		<div class="header">
+			  <h1> Schedule Me </h1>
+				<h2> Log-in Page </h2>
+			<div class="navbar">
+				<a href="events.html">Events</a>
+				<a href="mylists.html">My Lists</a>
+			</div>
+			
+		</div>
+		
+		<div class="maincontent">
+			<h1> Login </h1>
+     	<!-- google login button -->                                      
+    	<button onclick="googleLogin()">   
       Login With Google
-    </button> 
+    	</button> 
+		</div>
 
-
-
+	</div>
    <!--the back end connector-->
     <script src="app.js">   
     
-    
+    {<!-- The core Firebase JS SDK is always required and must be listed first -->}
+        <script src="/__/firebase/7.9.3/firebase-app.js"></script>
 
+        {<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries} -->}
+        <script src="/__/firebase/7.9.3/firebase-analytics.js"></script>
 
+      {<!-- Initialize Firebase -->}
+      <script src="/__/firebase/init.js"></script>
     </script>
   </body>
 </html>
