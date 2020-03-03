@@ -12,7 +12,7 @@
   background-color: coral;
   color: white;
   text-align: center;
-  padding: 50px;
+  padding: 70px;
 }
 
 .header h1
@@ -29,6 +29,17 @@ font-family: 'Allura';
 	font-size: 32px;
 	float: right;
 	order: 3;
+}
+
+.header h2 a
+{
+  color: white;
+  text-decoration: none;
+}
+
+.header h2 a:hover
+{
+  color: coral;
 }
 
 .navbar
@@ -55,7 +66,6 @@ font-family: 'Allura';
 }
 .maincontent
 {
-font-family: 'Allura';
   display: flex;
   flex-direction: column;
   flex-grow: 2;
@@ -64,6 +74,11 @@ font-family: 'Allura';
   text-align: center;
   min-height: 100vh;
   order: 1;
+}
+
+.maincontent h1
+{
+  font-family: 'Allura';
 }
 
 .footer
