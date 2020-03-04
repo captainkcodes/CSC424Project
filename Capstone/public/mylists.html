@@ -21,11 +21,64 @@
         <a href="index.html"> Back </a>
 
         <div class="maincontent">
-            <button onclick="createNewList()"> Create A List</button>
-            <button onclick="addListItem()"> Add an Item to Your List</button>
-            <button onclick="removeListItem()">Remove an Item from Your List</button>
+
+            <div class="defaultList">
+                <h1> Everyday Tasks</h1>
+                <label for="task">Add a task: </label>
+                <input type="text" name="task" id="task">
+                <button onclick="addTask()"> Add a Task to Your List</button>
+                <button onclick="removeTask()">Remove an Item from Your List</button>
+
+                <ul id="listdisplay"></ul>
+            </div>
+
+            <div class="schoolList">
+
+                <h1> School/Homework Tasks</h1>
+                <label for="task">Add a task: </label>
+                <input type="text" name="task" id="task">
+                <button onclick="addTask()"> Add a Task to Your List</button>
+                <button onclick="removeTask()">Remove an Item from Your List</button>
+
+                <ul id="listdisplay"></ul>
+
+            </div>
+
+            <div class="workList">
+                <h1> Work-Related Tasks</h1>
+                <label for="task">Add a task: </label>
+                <input type="text" name="task" id="task">
+                <button onclick="addTask()"> Add a Task to Your List</button>
+                <button onclick="removeTask()">Remove an Item from Your List</button>
+
+                <ul id="listdisplay"></ul>
+            </div>
         </div>
     </div>
 </body>
 
+<script>
+    //creates a new empty list and adds an item to it
+    function addTask()
+    {
+        var task = document.getElementById("task").value;
+        var ul = document.getElementById("listdisplay");
+        var li = document.createElement("li");
+
+        //add the tasks to the list
+        li.appendChild(document.createTextNode("~ " + task));
+        ul.appendChild(li);
+
+        //set text box back to empty after task is added
+        document.getElementById("task").value = "";
+        li.onclick = removeListItem;
+    }
+
+    //removes an item from the list
+    function removeTask()
+    {
+        //to be implemented
+    }
+
+</script>
 </html>
