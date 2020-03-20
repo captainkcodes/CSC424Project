@@ -6,8 +6,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Lists</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="icon" href="clock.gif" type="image/gif">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( "#tabs" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
+            $( "#tabs li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
+        } );
+    </script>
 </head>
 
 <body>
@@ -23,36 +31,44 @@
 
         <div class="maincontent">
 
-            <div class="defaultList">
-                <h1> Everyday Tasks</h1>
-                <label for="task">Add a task: </label>
-                <input type="text" name="task" id="task">
-                <button onclick="addTask()"> Add a Task to Your List</button>
-                <button onclick="removeTask()">Remove an Item from Your List</button>
+            <div id="tabs">
+                <ul>
+                    <li><a href="#tab1">Everyday Tasks</a></li>
+                    <li><a href="#tab2">School/Homework Tasks</a></li>
+                    <li><a href="#tab3">Work-Related Tasks</a></li>
+                </ul>
+                    <div id="tab1">
+                        <h2>Everyday Tasks</h2>
+                        <p>
+                            <label for="everytask">Add a task: </label>
+                            <input type="text" name="everytask" id="everytask">
+                            <button onclick="addTask()"> Add a Task to Your List</button>
+                            <button onclick="removeTask()">Remove an Item from Your List</button>
+                            <ul id="everylistdisplay"></ul>
+                        </p>
+                    </div>
 
-                <ul id="listdisplay"></ul>
-            </div>
+                    <div id="tab2">
+                        <h2>School/Homework Tasks</h2>
+                        <p>
+                            <label for="hwtask">Add a task: </label>
+                            <input type="text" name="hwtask" id="hwtask">
+                            <button onclick="addTask()"> Add a Task to Your List</button>
+                            <button onclick="removeTask()">Remove an Item from Your List</button>
+                            <ul id="hwlistdisplay"></ul>
+                        </p>
+                    </div>
 
-            <div class="schoolList">
-
-                <h1> School/Homework Tasks</h1>
-                <label for="task">Add a task: </label>
-                <input type="text" name="task" id="task">
-                <button onclick="addTask()"> Add a Task to Your List</button>
-                <button onclick="removeTask()">Remove an Item from Your List</button>
-
-                <ul id="listdisplay"></ul>
-
-            </div>
-
-            <div class="workList">
-                <h1> Work-Related Tasks</h1>
-                <label for="task">Add a task: </label>
-                <input type="text" name="task" id="task">
-                <button onclick="addTask()"> Add a Task to Your List</button>
-                <button onclick="removeTask()">Remove an Item from Your List</button>
-
-                <ul id="listdisplay"></ul>
+                <div id="tab3">
+                    <h2>Work-Related Tasks</h2>
+                    <p>
+                        <label for="worktask">Add a task: </label>
+                        <input type="text" name="worktask" id="worktask">
+                        <button onclick="addTask()"> Add a Task to Your List</button>
+                        <button onclick="removeTask()">Remove an Item from Your List</button>
+                        <ul id="worklistdisplay"></ul>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -62,17 +78,34 @@
     //creates a new empty list and adds an item to it
     function addTask()
     {
-        var task = document.getElementById("task").value;
-        var ul = document.getElementById("listdisplay");
-        var li = document.createElement("li");
-
         //add the tasks to the list
-        li.appendChild(document.createTextNode("~ " + task));
-        ul.appendChild(li);
 
-        //set text box back to empty after task is added
-        document.getElementById("task").value = "";
-        li.onclick = removeListItem;
+        //everyday tasks
+        var everyli = document.createElement("li");
+        var everytask = document.getElementById("everytask").value;
+        var everyul = document.getElementById("everylistdisplay");
+        everyli.appendChild(document.createTextNode(everytask));
+        everyul.appendChild(everyli);
+        document.getElementById("everytask").value = "";
+        everyli.onclick = removeTask;
+
+        //homework tasks
+        var hwli = document.createElement("li");
+        var hwtask = document.getElementById("hwtask").value;
+        var hwul = document.getElementById("hwlistdisplay");
+        hwli.appendChild(document.createTextNode(hwtask));
+        hwul.appendChild(hwli);
+        document.getElementById("hwtask").value = "";
+        hwli.onclick = removeTask;
+
+        //work tasks
+        var workli = document.createElement("li");
+        var worktask = document.getElementById("worktask").value;
+        var workul = document.getElementById("worklistdisplay");
+        workli.appendChild(document.createTextNode(worktask));
+        workul.appendChild(workli);
+        document.getElementById("worktask").value = "";
+        workli.onclick = removeTask;
     }
 
     //removes an item from the list

@@ -2,15 +2,17 @@
 
 .container
 {
-	/*display: flex;*/
   font-family: monospace;
+  /*background-image: url('book\ transparent.png');*/
+  background: no-repeat;
 }
 
 .header
 {
+  display: flex;
   flex-direction: row;
-  background-color: coral;
-  color: white;
+  background-color: gold;
+  color: black;
   text-align: center;
   padding: 70px;
 }
@@ -28,7 +30,7 @@
 font-family: 'Allura';
 	font-size: 32px;
 	float: right;
-	order: 3;
+	order: 5;
 }
 
 .header h2 a
@@ -45,7 +47,7 @@ font-family: 'Allura';
 .navbar
 {
   flex-direction: row;
-  order: 2;
+  order: 3;
   text-align: center;
 }
 
@@ -74,9 +76,11 @@ font-family: 'Allura';
   text-align: center;
   min-height: 100vh;
   order: 1;
+  padding-bottom: 50px;
+  font-family: monospace;
 }
 
-.maincontent h1
+.maincontent h2
 {
   font-family: 'Allura';
 }
@@ -86,3 +90,11 @@ font-family: 'Allura';
   padding-top: 20px;
   text-align: center;
 }
+
+/*FOR LIST TABS */
+.ui-tabs-vertical { width: 55em; }
+.ui-tabs-vertical .ui-tabs-nav { padding: .2em .1em .2em .2em; float: left; width: 12em; }
+.ui-tabs-vertical .ui-tabs-nav li { clear: left; width: 100%; border-bottom-width: 1px !important; border-right-width: 0 !important; margin: 0 -1px .2em 0; }
+.ui-tabs-vertical .ui-tabs-nav li a { display:block; }
+.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active { padding-bottom: 0; padding-right: .1em; border-right-width: 1px; }
+.ui-tabs-vertical .ui-tabs-panel { padding: 1em; float: right; width: 40em;}
