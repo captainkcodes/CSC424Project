@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap');
+
+/* [Web/Big Screens] */
+.container
+{
+  font-family: monospace;
+  font-size: large;
+}
+.maincontent
+{
+  padding-top: 15%;
+  text-align: center;
+  width: 100%;
+  background: white;
+}
+a
+{
+  color: black;
+  text-decoration: none;
+}
+a:hover
+{
+  color: gold;
+}
+h1, h2
+{
+  font-family: "Satisfy";
+}
+.header
+{
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(238,179,13,1) 36%, rgba(255,255,255,1) 100%);
+  text-align: center;
+  padding: 5%;
+}
+.navbar
+{
+  background: transparent;
+  text-align: center;
+  display: inline-block;
+}
+
+/*[FOR LANDING PAGE ONLY]*/
+ul.breadcrumb {
+  padding: 8px 16px;
+  list-style: none;
+  background-color: #eee;
+}
+
+ul.breadcrumb li {display: inline;}
+
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+ul.breadcrumb li a {color: gold;}
+
+ul.breadcrumb li a:hover {color: black;}
+/*[Small Screens]*/
+@media screen and (max-width: 768px)
+{
+  .maincontent
+  {
+    float: none;
+    width: 100%;
+  }
+}
+
+/*[FOR To-Do Lists]*/
+#worktodo-wrap
+{
+  box-sizing: border-box;
+  font-size: 0.9em;
+}
+
+#worktodo-wrap input[type=text]
+{
+  padding: 10px 8px;
+}
+
+#worktodo-wrap input[type=button],
+#worktodo-wrap input[type=submit]
+{
+  padding: 8px 5px;
+  color: #fff;
+  background: black;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+/* [CLEARFIX] */
+#worktodo-wrap .clearfix 
+{
+  overflow: auto;
+}
+
+#worktodo-wrap .clearfix::after
+{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/* [WRAPPER] */
+#worktodo-wrap
+{
+    max-width: 500px;
+    background: #f2f2f2;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+/* [HEADER] */
+#worktodo-wrap h2
+{
+    font-size: 1.5em;
+    margin: 0;
+    color: #333;
+}
+
+
+/* [ADD] */
+#worktodo-form
+{
+    margin: 10px 0;
+}
+
+#worktodo-form input 
+{
+    display: block;
+    float: left;
+}
+
+#worktodo-form input[type=text]
+{
+    width: 85%;
+}
+
+#worktodo-form input[type=submit]
+{
+    width: 15%;
+    background: gold;
+    border: 2px solid gold;
+}
+
+
+/* [DELETE] */
+#worktodo-del {}
+
+
+/* [LIST ITEMS] */
+#worktodo-list .clearfix
+{
+    margin-top: 8px;
+}
+
+#worktodo-list .clearfix div, #worktodo-list .clearfix input
+{
+    box-sizing: border-box;
+    float: left;
+    display: block;
+}
+
+#worktodo-list .item
+{
+    border: 1px solid #ddd;
+    background: #fff;
+    width: 80%;
+    padding: 10px;
+}
+
+#worktodo-list .item.cx
+{
+    background: #ffe1d7;
+    text-decoration: line-through;
+}
+
+#worktodo-list .item.done
+{
+    background: #dcffd7;
+}
+
+#worktodo-list .clearfix input {
+    width: 10%;
+}
+
+#worktodo-list input.bdone
+{
+    background: #4aa53d;
+    border: 2px solid #4aa53d;
+}

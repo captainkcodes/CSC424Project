@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<!-- after user logs in this page should redirect to a 
+landing page that lets them choose whether they want to
+view events, research classes, or create task lists-->
+<html>
+
+    <head>
+        <title> Login </title>
+        <link rel="stylesheet" type="text/css" href="forms.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div class="header">
+                <h1> Login </h1>
+
+                <div class="navbar">
+                    <a href="index.html"> Home </a>
+                </div>
+            </div>
+
+            <div class="main">
+
+                <div class="maincontent">
+                    <form action="" method="post" name="logform">
+                        <label for="email">Email: </label>
+                        <input type="email" name="email" placeholder="jdoe@example.com" required>
+              
+                        <label for="password"> Password: </label>
+                        <input type="password" name="pass" required >
+
+                        <input type="submit" value="Login">
+
+                        <!-- google login button -->                                      
+                        <button class="button" onclick="googleLogin()"> Login With Google </button>
+                      </form>
+                      <p>Don't have an account? <a href="register.html"> Create one.</a> </p>
+                </div>
+            </div>
+        </div>
+
+         <!--the back end connector-->
+    <script src="app.js"></script>
+    </body>
+</html>

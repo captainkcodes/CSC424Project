@@ -6,16 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Lists</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="icon" href="clock.gif" type="image/gif">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-        $( function() {
-            $( "#tabs" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
-            $( "#tabs li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
-        } );
-    </script>
+    <link rel="stylesheet" type="text/css" href="todo.css">
+    <script src="js/todo.js"></script>
 </head>
 
 <body>
@@ -23,96 +15,41 @@
     <div class="container">
 
         <div class="header">
-            <h1> My Lists </h1>
-            <h2> <a href="logout.html"> Log Out </a></h2>
+            <h1> To-Do Lists </h1>
+            
+            <div class="navbar">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="mylists.html">To-Do Lists</a></li>
+                    <li><a href="classes.html">Class Search</a></li>
+                    <li><a href="logout.html">Log Out</a></li>
+                </ul>
+            </div>
         </div>
-
-        <a href="index.html"> Back </a>
 
         <div class="maincontent">
 
-            <div id="tabs">
-                <ul>
-                    <li><a href="#tab1">Everyday Tasks</a></li>
-                    <li><a href="#tab2">School/Homework Tasks</a></li>
-                    <li><a href="#tab3">Work-Related Tasks</a></li>
-                </ul>
-                    <div id="tab1">
-                        <h2>Everyday Tasks</h2>
-                        <p>
-                            <label for="everytask">Add a task: </label>
-                            <input type="text" name="everytask" id="everytask">
-                            <button onclick="addTask()"> Add a Task to Your List</button>
-                            <button onclick="removeTask()">Remove an Item from Your List</button>
-                            <ul id="everylistdisplay"></ul>
-                        </p>
-                    </div>
+            <!-- For Work Related Tasks-->
+            <div class="work-task">
 
-                    <div id="tab2">
-                        <h2>School/Homework Tasks</h2>
-                        <p>
-                            <label for="hwtask">Add a task: </label>
-                            <input type="text" name="hwtask" id="hwtask">
-                            <button onclick="addTask()"> Add a Task to Your List</button>
-                            <button onclick="removeTask()">Remove an Item from Your List</button>
-                            <ul id="hwlistdisplay"></ul>
-                        </p>
-                    </div>
-
-                <div id="tab3">
-                    <h2>Work-Related Tasks</h2>
-                    <p>
-                        <label for="worktask">Add a task: </label>
-                        <input type="text" name="worktask" id="worktask">
-                        <button onclick="addTask()"> Add a Task to Your List</button>
-                        <button onclick="removeTask()">Remove an Item from Your List</button>
-                        <ul id="worklistdisplay"></ul>
-                    </p>
+                <div id="worktodo-wrap">
+                    <h2>Tasks</h2>
+                    <form id="worktodo-form" class="clearfix">
+                        <input type="text" id="worktodo-add" placeholder="New Task" required />
+                        <input type="submit" value="&#10010;" />
+                    </form>
+                
+                <div id="worktodo-del">
+                    <input type="button" value="Delete All Tasks" id="worktodo-dat" />
+                    <input type="button" value="Delete Completed Tasks" id="worktodo-dct" />
                 </div>
+                
+                <div id="worktodo-list"> </div>
             </div>
+
         </div>
     </div>
 </body>
 
-<script>
-    //creates a new empty list and adds an item to it
-    function addTask()
-    {
-        //add the tasks to the list
-
-        //everyday tasks
-        var everyli = document.createElement("li");
-        var everytask = document.getElementById("everytask").value;
-        var everyul = document.getElementById("everylistdisplay");
-        everyli.appendChild(document.createTextNode(everytask));
-        everyul.appendChild(everyli);
-        document.getElementById("everytask").value = "";
-        everyli.onclick = removeTask;
-
-        //homework tasks
-        var hwli = document.createElement("li");
-        var hwtask = document.getElementById("hwtask").value;
-        var hwul = document.getElementById("hwlistdisplay");
-        hwli.appendChild(document.createTextNode(hwtask));
-        hwul.appendChild(hwli);
-        document.getElementById("hwtask").value = "";
-        hwli.onclick = removeTask;
-
-        //work tasks
-        var workli = document.createElement("li");
-        var worktask = document.getElementById("worktask").value;
-        var workul = document.getElementById("worklistdisplay");
-        workli.appendChild(document.createTextNode(worktask));
-        workul.appendChild(workli);
-        document.getElementById("worktask").value = "";
-        workli.onclick = removeTask;
-    }
-
-    //removes an item from the list
-    function removeTask()
-    {
-        //to be implemented
-    }
-
-</script>
 </html>

@@ -1,100 +1,106 @@
-@import url('https://fonts.googleapis.com/css?family=Allura&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap');
 
+/* [Web/Big Screens] */
 .container
 {
   font-family: monospace;
-  /*background-image: url('book\ transparent.png');*/
-  background: no-repeat;
-}
-
-.header
-{
-  display: flex;
-  flex-direction: row;
-  background-color: gold;
-  color: black;
-  text-align: center;
-  padding: 70px;
-}
-
-.header h1
-{
-  font-family: 'Allura';
-  font-size: 32px;
-  order: 1;
-  float: left;
-}
-
-.header h2
-{
-font-family: 'Allura';
-	font-size: 32px;
-	float: right;
-	order: 5;
-}
-
-.header h2 a
-{
-  color: white;
-  text-decoration: none;
-}
-
-.header h2 a:hover
-{
-  color: coral;
-}
-
-.navbar
-{
-  flex-direction: row;
-  order: 3;
-  text-align: center;
-}
-
-.navbar a
-{
-  /*display: inline-block;*/
-  text-decoration: none;
-  color: black;
-  padding: 5px;
-  padding-left: 20px;
-  justify-content: center;
-  align-items: center;
-}
-
-.navbar a:hover
-{
-  color: coral;
+  font-size: large;
 }
 .maincontent
 {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 2;
-  justify-content: center;
-  align-items: center;
+  padding-top: 15%;
   text-align: center;
-  min-height: 100vh;
-  order: 1;
-  padding-bottom: 50px;
-  font-family: monospace;
+  width: 100%;
+  background: white;
 }
-
-.maincontent h2
+.button
 {
-  font-family: 'Allura';
-}
-
-.footer
-{
-  padding-top: 20px;
+  border-radius: 4px;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(238,179,13,1) 36%, rgba(255,255,255,1) 100%);
+  color: black;
   text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+.button span
+{
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.button:hover span {
+  padding-right: 25px;
+}
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+a
+{
+  color: black;
+  text-decoration: none;
+}
+a:hover
+{
+  color: gold;
+}
+h1, h2
+{
+  font-family: "Satisfy";
+}
+.header
+{
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(238,179,13,1) 36%, rgba(255,255,255,1) 100%);
+  text-align: center;
+  padding: 5%;
+}
+.navbar
+{
+  background: transparent;
+  text-align: center;
+  display: inline-block;
 }
 
-/*FOR LIST TABS */
-.ui-tabs-vertical { width: 55em; }
-.ui-tabs-vertical .ui-tabs-nav { padding: .2em .1em .2em .2em; float: left; width: 12em; }
-.ui-tabs-vertical .ui-tabs-nav li { clear: left; width: 100%; border-bottom-width: 1px !important; border-right-width: 0 !important; margin: 0 -1px .2em 0; }
-.ui-tabs-vertical .ui-tabs-nav li a { display:block; }
-.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active { padding-bottom: 0; padding-right: .1em; border-right-width: 1px; }
-.ui-tabs-vertical .ui-tabs-panel { padding: 1em; float: right; width: 40em;}
+/*[FOR LANDING PAGE ONLY]*/
+ul.breadcrumb {
+  padding: 8px 16px;
+  list-style: none;
+  background-color: #eee;
+}
+
+ul.breadcrumb li {display: inline;}
+
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+ul.breadcrumb li a {color: gold;}
+
+ul.breadcrumb li a:hover {color: black;}
+/*[Small Screens]*/
+@media screen and (max-width: 768px)
+{
+  .maincontent
+  {
+    float: none;
+    width: 100%;
+  }
+}
