@@ -57,6 +57,10 @@ a:hover
 {
   color: #3b3f40;
 }
+a.button
+{
+  color: grey;
+}
 h1, h2
 {
   font-family: "Satisfy";

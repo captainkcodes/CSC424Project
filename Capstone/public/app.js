@@ -24,6 +24,8 @@ var firebaseConfig = {
             promise.catch(e => alert(e.message));
             
             alert("Signed Up");
+
+            window.location.href="index.html"
         }
         
         
@@ -36,9 +38,7 @@ var firebaseConfig = {
             const promise = auth.signInWithEmailAndPassword(email.value, password.value);
             promise.catch(e => alert(e.message));
             
-            
-            
-            
+            window.location.href="landingpage.html"
         }
         
         
@@ -47,6 +47,7 @@ var firebaseConfig = {
             auth.signOut();
             alert("Signed Out");
             
+            window.location.href="index.html"
         }
         
         

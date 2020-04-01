@@ -16,12 +16,12 @@
 }
 a
 {
-  color: black;
+  color: grey;
   text-decoration: none;
 }
 a:hover
 {
-  color: gold;
+  color: #3b3f40;
 }
 h1, h2
 {
@@ -29,10 +29,11 @@ h1, h2
 }
 .header
 {
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(238,179,13,1) 36%, rgba(255,255,255,1) 100%);
+  background-color: #eed3c9;
   text-align: center;
   padding: 5%;
+  border-style: double;
+  box-shadow: 10px 10px black;
 }
 .navbar
 {
@@ -56,7 +57,7 @@ ul.breadcrumb li+li:before {
   content: "/\00a0";
 }
 
-ul.breadcrumb li a {color: gold;}
+ul.breadcrumb li a {color: grey;}
 
 ul.breadcrumb li a:hover {color: black;}
 /*[Small Screens]*/
@@ -86,8 +87,8 @@ ul.breadcrumb li a:hover {color: black;}
 {
   padding: 8px 5px;
   color: #fff;
-  background: black;
-  border: 2px solid black;
+  background:#eed3c9;
+  border: 2px solid #eed3c9;
   cursor: pointer;
 }
 
@@ -143,8 +144,8 @@ ul.breadcrumb li a:hover {color: black;}
 #worktodo-form input[type=submit]
 {
     width: 15%;
-    background: gold;
-    border: 2px solid gold;
+    background: #22a4cf;
+    border: 2px solid #22a4cf;
 }
 
 
