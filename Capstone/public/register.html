@@ -12,6 +12,13 @@ into the system
         <link rel="stylesheet" type="text/css" href="forms.css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+          <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
+<script src="/__/firebase/7.13.1/firebase-functions.js"></script>
+<script src="/__/firebase/7.13.1/firebase-storage.js"></script>
+<script src="app.js"></script>
     </head>
 
     <body>
@@ -29,20 +36,17 @@ into the system
 
                 <div class="maincontent">
                     <form action="" method="post" name="regform">
-                        <label for="email">Email: </label>
-                        <input type="email" name="email" placeholder="jdoe@example.com" required>
-              
-                        <label for="password"> Password: </label>
-                        <input type="password" name="pass" required >
 
-                        <input type="submit" value="Create Account">
+                        <input type="email" placeholder="jdoe@example.com" id="email"/>
+                        <input type="password" placeholder="pass" id="password"/>   
+
+                        
                       </form>
                       <p>Already have an account? <a href="login.html"> Login.</a> </p>
                 </div>
             </div>
         </div>
-
-         <!--the back end connector-->
-    <script src="app.js"></script>
+             <!-- WILL NOT WORK INSIDE DIV, POSSIBLE CSS CONFLICTING-->
+            <button onclick="signUp()" id="signUp"> Sign Up</button>
     </body>
 </html>
