@@ -16,12 +16,12 @@
 }
 a
 {
-  color: white;
+  color: grey;
   text-decoration: none;
 }
 a:hover
 {
-    color: #eeb30d;
+  color: #3b3f40;
 }
 
 h1, h2
@@ -30,10 +30,11 @@ h1, h2
 }
 .header
 {
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(238,179,13,1) 36%, rgba(255,255,255,1) 100%);
+  background-color: #eed3c9;
   text-align: center;
   padding: 5%;
+  border-style: double;
+  box-shadow: 10px 10px black;
 }
 .navbar
 {
@@ -58,7 +59,7 @@ input[type=password]
 }
 input[type=submit]
 {
-    background-color: #eeb30d;
+    background-color: #eed3c9;
     border: none;
     color: black;
     padding: 16px 32px;
@@ -74,18 +75,17 @@ input[type=submit]
 }
 input[type=submit]:hover
 {
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(238,179,13,1) 36%, rgba(255,255,255,1) 100%);
+    background: #eed3c9;
     opacity: 1;
 }
 input[type=text]:focus,
 input[type=email]:focus, 
 input[type=password]:focus
 {
-    border-color: #eeb30d;
+    border-color: #eed3c9;
 }
 .button {
-    background-color: #eeb30d;
+    background-color: #eed3c9;
     border: none;
     color: black;
     padding: 16px 32px;
@@ -102,8 +102,7 @@ input[type=password]:focus
   
 .button:hover
 {
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(238,179,13,1) 36%, rgba(255,255,255,1) 100%);
+    background: #eed3c9;
     opacity: 1;
 }
 /*[Small Screens]*/

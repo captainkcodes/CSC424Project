@@ -33,7 +33,7 @@ view events, research classes, or create task lists-->
                         <label for="password"> Password: </label>
                         <input type="password" name="pass" required >
 
-                        <input type="submit" value="Login">
+                        <input type="submit" value="Login" onclick="windowReplacer()">
 
                         <!-- google login button -->                                      
                         <button class="button" onclick="googleLogin()"> Login With Google </button>
@@ -47,3 +47,11 @@ view events, research classes, or create task lists-->
     <script src="app.js"></script>
     </body>
 </html>
+
+<script>
+
+    function windowReplacer()
+    {
+        window.location.href="landingpage.html";
+    }
+</script>

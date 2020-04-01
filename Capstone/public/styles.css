@@ -12,17 +12,15 @@
   padding-top: 15%;
   text-align: center;
   width: 100%;
-  background: white;
 }
 .button
 {
   border-radius: 4px;
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(238,179,13,1) 36%, rgba(255,255,255,1) 100%);
+  background: #eed2c9;
   color: black;
   text-align: center;
-  font-size: 28px;
-  padding: 20px;
+  font-size: 18px;
+  padding: 10px;
   width: 200px;
   transition: all 0.5s;
   cursor: pointer;
@@ -52,12 +50,12 @@
 }
 a
 {
-  color: black;
+  color: grey;
   text-decoration: none;
 }
 a:hover
 {
-  color: gold;
+  color: #3b3f40;
 }
 h1, h2
 {
@@ -65,10 +63,11 @@ h1, h2
 }
 .header
 {
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(238,179,13,1) 36%, rgba(255,255,255,1) 100%);
+  background-color: #eed3c9;
   text-align: center;
   padding: 5%;
+  border-style: double;
+  box-shadow: 10px 10px black;
 }
 .navbar
 {
@@ -77,11 +76,11 @@ h1, h2
   display: inline-block;
 }
 
-/*[FOR LANDING PAGE ONLY]*/
+/*[FOR NAVIGATION ONLY]*/
 ul.breadcrumb {
-  padding: 8px 16px;
+  padding: 4px 8px;
   list-style: none;
-  background-color: #eee;
+  background-color: #eed3c9;
 }
 
 ul.breadcrumb li {display: inline;}
@@ -92,7 +91,7 @@ ul.breadcrumb li+li:before {
   content: "/\00a0";
 }
 
-ul.breadcrumb li a {color: gold;}
+ul.breadcrumb li a {color: grey;}
 
 ul.breadcrumb li a:hover {color: black;}
 /*[Small Screens]*/
