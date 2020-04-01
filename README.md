@@ -14,7 +14,7 @@ and unzip this file
 
 FRONT END ONLY:
 
-*for front-end editing you can simply load the project folder to a editor such as visual studio and edit the html. then to test this website, save your edits on the editor and go to your file explorer and click on the html in the project folder to see your edits
+*for front-end editing you can simply load the project folder to a editor such as visual studio and edit the html. then to test this website, save your edits on the editor and go to your file explorer and click on the html in the project folder to see your edits*
 
 
 back-end / web testing
