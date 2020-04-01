@@ -20,13 +20,13 @@ FRONT END ONLY:
 back-end / web testing
 
 
-next go to firebase and enter the schedule me project under get started: https://firebase.google.com/?authuser=1
+`next go to firebase and enter the schedule me project under get started: https://firebase.google.com/?authuser=1
 
 got to your text editor and load the project folder, make sure in terminal you are under the capstone folder! very important!
 
 step 1: go to your terminal and type this: npm install firebase-tools -g (this will install firebase tools you need to run the app to all terminals)(to make sure npm or firebase is installed type npm --version    or  firebase --version)
 
-step 2: type firebase serve and load the local host 5000 link by pressing (ctrl + left click) and you should be in the project :D congrats! 
+step 2: type firebase serve and load the local host 5000 link by pressing (ctrl + left click) and you should be in the project :D congrats!` 
 
 
 
