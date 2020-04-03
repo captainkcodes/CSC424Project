@@ -16,12 +16,14 @@
 }
 a
 {
-  color: grey;
+  color: whitesmoke;
+  background-color: #6cc9ff;
+  padding: 5px 10px;
   text-decoration: none;
 }
 a:hover
 {
-  color: #3b3f40;
+  color: black;
 }
 
 h1, h2
@@ -30,7 +32,7 @@ h1, h2
 }
 .header
 {
-  background-color: #eed3c9;
+  background-color: #6cc9ff;
   text-align: center;
   padding: 5%;
   border-style: double;
@@ -59,7 +61,7 @@ input[type=password]
 }
 input[type=submit]
 {
-    background-color: #eed3c9;
+    background-color: #6cc9ff;
     border: none;
     color: black;
     padding: 16px 32px;
@@ -75,17 +77,17 @@ input[type=submit]
 }
 input[type=submit]:hover
 {
-    background: #eed3c9;
+    background: #6cc9ff;
     opacity: 1;
 }
 input[type=text]:focus,
 input[type=email]:focus, 
 input[type=password]:focus
 {
-    border-color: #eed3c9;
+    border-color: #6cc9ff;
 }
 .button {
-    background-color: #eed3c9;
+    background-color: #6cc9ff;
     border: none;
     color: black;
     padding: 16px 32px;
@@ -102,9 +104,23 @@ input[type=password]:focus
   
 .button:hover
 {
-    background: #eed3c9;
+    background: #6cc9ff;
     opacity: 1;
 }
+
+#signUp{
+  font-family: monospace;
+  font-size: large;
+  color: whitesmoke;
+  border-style: double;
+  background: #6cc9ff;
+  padding: 5px 10px;
+}
+
+#signUp:hover{
+color: black;
+}
+
 /*[Small Screens]*/
 @media screen and (max-width: 768px)
 {

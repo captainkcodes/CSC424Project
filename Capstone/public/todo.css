@@ -29,7 +29,7 @@ h1, h2
 }
 .header
 {
-  background-color: #eed3c9;
+  background-color: #6cc9ff;
   text-align: center;
   padding: 5%;
   border-style: double;
@@ -42,11 +42,25 @@ h1, h2
   display: inline-block;
 }
 
+.button{ 
+  font-family: monospace;
+  font-size: large;
+  color: whitesmoke;
+  border-style: double;
+  background: #6cc9ff;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+ 
+.button:hover{
+  color: black;
+}
+
 /*[FOR LANDING PAGE ONLY]*/
 ul.breadcrumb {
   padding: 8px 16px;
   list-style: none;
-  background-color: #eee;
+  background: transparent;
 }
 
 ul.breadcrumb li {display: inline;}
@@ -57,7 +71,7 @@ ul.breadcrumb li+li:before {
   content: "/\00a0";
 }
 
-ul.breadcrumb li a {color: grey;}
+ul.breadcrumb li a {color: whitesmoke;}
 
 ul.breadcrumb li a:hover {color: black;}
 /*[Small Screens]*/
@@ -87,8 +101,8 @@ ul.breadcrumb li a:hover {color: black;}
 {
   padding: 8px 5px;
   color: #fff;
-  background:#eed3c9;
-  border: 2px solid #eed3c9;
+  background:#6cc9ff;
+  border: 2px solid #6cc9ff;
   cursor: pointer;
 }
 

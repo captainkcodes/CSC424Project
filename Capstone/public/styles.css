@@ -15,9 +15,11 @@
 }
 .button
 {
+  font-family: monospace;
   border-radius: 4px;
-  background: #eed2c9;
-  color: black;
+  background: #6cc9ff;
+  color: whitesmoke;
+  border-style: double;
   text-align: center;
   font-size: 18px;
   padding: 10px;
@@ -26,8 +28,14 @@
   cursor: pointer;
   margin: 5px;
 }
+
+.button:hover{
+  color: black;
+}
+
 .button span
 {
+  color: white;
   cursor: pointer;
   display: inline-block;
   position: relative;
@@ -50,7 +58,7 @@
 }
 a
 {
-  color: grey;
+  color: whitesmoke;
   text-decoration: none;
 }
 a:hover
@@ -59,7 +67,7 @@ a:hover
 }
 a.button
 {
-  color: grey;
+  color: whitesmoke;
 }
 h1, h2
 {
@@ -67,7 +75,7 @@ h1, h2
 }
 .header
 {
-  background-color: #eed3c9;
+  background-color: #6cc9ff;
   text-align: center;
   padding: 5%;
   border-style: double;
@@ -84,7 +92,7 @@ h1, h2
 ul.breadcrumb {
   padding: 4px 8px;
   list-style: none;
-  background-color: #eed3c9;
+  background-color: #6cc9ff;
 }
 
 ul.breadcrumb li {display: inline;}
@@ -95,7 +103,7 @@ ul.breadcrumb li+li:before {
   content: "/\00a0";
 }
 
-ul.breadcrumb li a {color: grey;}
+ul.breadcrumb li a {color: whitesmoke;}
 
 ul.breadcrumb li a:hover {color: black;}
 /*[Small Screens]*/
