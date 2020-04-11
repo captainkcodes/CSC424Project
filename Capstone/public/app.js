@@ -11,10 +11,11 @@ var firebaseConfig = {
   };
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
-      
+             
         const auth = firebase.auth();
+        var database = firebase.database(); 
+        var ref = database.ref('users');
         
-                
         
         auth.onAuthStateChanged(function(user){
             
@@ -34,7 +35,7 @@ var firebaseConfig = {
             }  
             
         });
-
+        
 
 
   
@@ -45,13 +46,21 @@ var firebaseConfig = {
             const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
             promise.catch(e => alert(e.message));
             
+        
+           
+
             auth.onAuthStateChanged(function(user){
                 if(user){
-                    window.location.href="landingpage.html"    
+                    window.location.href="landingpage.html" 
+
+                    var data ={
+                        email: user.uid
+                    }
+                    ref.push(data);   
                 }  
             });
-            
-               
+
+       
         }
         
         
