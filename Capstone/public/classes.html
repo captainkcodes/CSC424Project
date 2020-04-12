@@ -4,7 +4,7 @@
 
     <head>
         <title> Class Search</title>
-        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" type="text/css" href="forms.css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -40,6 +40,208 @@
             <div class="main">
                 <div class="maincontent">
 
+                    <form name="classform" method="post">
+                        <h2> What classification are you?</h2>
+
+                        <label for="freshman">Freshman</label>
+                        <input type="checkbox" id="freshman" name="freshman" value="Freshman">
+                        
+                        <label for="sophomore">Sophomore</label>
+                        <input type="checkbox" id="sophomore" name="sophomore" value="Sophomore">
+
+                        <label for="junior">Junior</label>
+                        <input type="checkbox" id="junior" name="junior" value="Junior">
+
+                        <label for="Senior">Senior</label>
+                        <input type="checkbox" id="senior" name="senior" value="Senior">
+
+                        <!-- for selection of classes -->
+                        <h2>What classes have you taken/are taking?</h2>
+                        <h3>Tip: Hold control while selecting to select multiple classes.</h3>
+
+                        <label for="freshClasses">Choose classes (Freshman):</label>
+                        <select id="freshClasses" class="select" multiple>
+                            <option value="MAT_167">Calculus I</option>
+                            <option value="MAT_168">Calculus II</option>
+                            <option value="ENG_101">Composition One</option>
+                            <option value="ENG_102">Composition Two</option>
+                            <option value="CSC_101">Computer Science I</option>
+                            <option value="CSC_101L">Computer Science Lab</option>
+                            <option value="CSC_102">Computer Science II</option>
+                        </select>
+
+                        <br>
+
+                        <label for="sophClasses">Choose classes (Sophomore):</label>
+                        <select id="sophClasses" class="select" multiple>
+                            <option value="MAT_169">Calculus III</option>
+                            <option value="CSC_309">Computers and Society</option>
+                            <option value="CSC_206">Computer Organization</option>
+                            <option value="CSC_307">Data Structures & Algorithms</option>
+                            <option value="CSC_317">Object-Oriented</option>
+                            <option value="ENG_203">World Literature</option>
+                        </select>
+
+                        <br>
+
+                        <label for="junClasses">Choose classes (Junior):</label>
+                        <select id="junClasses" class="select" multiple>
+                            <option value="CSC_306">Operating Systems</option>
+                            <option value="CSC_408">Organization of Programming</option>
+                        </select>
+
+                        <br>
+
+                        <label for="senClasses">Choose classes (Senior):</label>
+                        <select id="freshClasses" class="select" multiple>
+                            <option value="CSC_414">Software Design</option>
+                            <option value="CSC_424">Software Engineering II</option>
+                        </select>
+                        
+                        <!-- Aesthetic Classes 1-->
+                        <h2>What Aesthetic classes have you taken/are taking?</h2>
+                        <label for="One_Aesthetic_Value">Choose One:</label>
+                        <select id="One_Aesthetic_Value" class="select">
+                            <option value="ART_130">Art Appreciation</option>
+                            <option value="DAN_130">Dance Appreciation</option>
+                            <option value="MUS_165">Enjoyment of Music</option>
+                            <option value="THE_100">Theatrical Expressions</option>
+                        </select>
+
+                        <!-- Discrete Mathematics 1-->
+                        <h2>Which discrete math have you taken/are taking?</h2>
+                        <label for="One_Discrete_Math">Choose One:</label>
+                        <select id="One_Discrete_Math" class="select">
+                            <option value="CSC_300">Foundations of Computer Science</option>
+                            <option value="MAT_340">Discrete Mathematics</option>
+                        </select>
+
+                        <!-- Major Requirements 1, 3-->
+                        <h2>What major requirements have you taken/are taking?</h2>
+                        <label for="One_Major_Requirements">Choose One:</label>
+                        <select id="One_Major_Requirements" class="select">
+                            <option value="CSC_440">Client Side Web</option>
+                            <option value="CSC_444">Introduction to Robotics</option>
+                            <option value="CSC_320">Linear Programming Techniques</option>
+                            <option value="CSC_441">Web Server Side</option>
+                            <option value="CSC_422">Operations Research</option>
+                        </select>
+
+                        <br>
+
+                        <label for="Three_Major_Requirements">Choose Three:</label>
+                        <select id="Three_Major_Requirements" class="select" multiple>
+                            <option value="CSS_342">COBOL Programming</option>
+                            <option value="CSS_446">Advanced Java</option>
+                            <option value="CSS_431">Advanced Visual Basic</option>
+                            <option value="CSS_343">C Programming</option>
+                            <option value="CSS_405">CGI Programming</option>
+                            <option value="CSS_417">Experimental Design</option>
+                            <option value="CSS_240">FORTRAN</option>
+                            <option value="CSS_442">Information Systems</option>
+                            <option value="CSS_346">Introduction to Java</option>
+                            <option value="CSS_416">Mathematical Statistics II</option>
+                            <option value="CSS_418">Sampling Methods</option>
+                            <option value="CSS_360">Unix Operating System</option>
+                            <option value="CSS_460">Unix System and Network</option>
+                            <option value="CSS_331">Visual Basic</option>
+                        </select>
+
+                        <!-- Math Requirements 1-->
+                        <h2>Which math requirement have you taken/are taking?</h2>
+                        <label for="One_Mat_Requirements">Choose One:</label>
+                        <select id="One_Mat_Requirements" class="select">
+                            <option value="CSS_415">Methods of Mathematical Statistics I</option>
+                            <option value="MAT_320">Probability and Mathematical Statistics I</option>
+                        </select>
+
+                        <!-- Study Requirements 1, 2-->
+                        <h2>Which study requirements have you taken/are taking?</h2>
+                        <label for="One_Study_Requirements">Choose One:</label>
+                        <select id="One_Study_Requirements" class="select">
+                            <option value="CSC_410">Multi Processing</option>
+                            <option value="CSC_415">Theory of Programming</option>
+                        </select>
+
+                        <br>
+
+                        <label for="Two_Study_Requirements">Choose Two:</label>
+                        <select id="Two_Study_Requirements" class="select" multiple>
+                            <option value="CSC_412">Artificial Intelligence</option>
+                            <option value="CSC_425">Computer Graphics Design</option>
+                            <option value="CSC_418">Cryptography</option>
+                            <option value="CSC_411">Database Management</option>
+                            <option value="CSC_423">Information Retrieval</option>
+                            <option value="CSC_410">Multi Processings</option>
+                        </select>
+
+                        <!-- Behavioral Science 2-->
+                        <h2>Which behavioral sciences are you taking/have taken?</h2>
+                        <label for="Two_Behavioral_Sciences">Choose Two:</label>
+                        <select id="Two_Behavioral_Sciences" class="select" multiple>
+                            <option value="PS_101">American Government</option>
+                            <option value="HHS_100">Concepts of Wellness</option>
+                            <option value="ECO_101">Economics</option>
+                            <option value="PSY_110">General Psychology</option>
+                            <option value="ANT_101">Human Experience</option>
+                            <option value="GHY_101">World Geography</option>
+                        </select>
+
+                        <!-- General Science 2-->
+                        <h2>Which general sciences are you taking/have taken?</h2>
+                        <label for="Two_GEC_Sci">Choose Two:</label>
+                        <select id="Two_GEC_Sci" class="select" multiple>
+                            <option value="BSC_110">Biological Science I</option>
+                            <option value="BSC_111">Biological Science II</option>
+                            <option value="CHE_106">General Chemistry I</option>
+                            <option value="CHE_107">General Chemistry II</option>
+                            <option value="GLY_103">Historical Geology</option>
+                            <option value="GLY_101">Physical Geology</option>
+                            <option value="PHY_201">Physics I with Calculus</option>
+                            <option value="PHY_202">Physics II with Calculus</option>
+                        </select>
+
+                        <!-- Humanities 2-->
+                        <h2>Which humanitites are you taking/have taken?</h2>
+                        <label for="Two_Humanities">Choose Two:</label>
+                        <select id="Two_Humanities" class="select" multiple>
+                            <option value="REL_131">Comparative Religion</option>
+                            <option value="PHI_171">Ethics</option>
+                            <option value="PHI_151">Philosophy</option>
+                            <option value="SOC_101">Principles of Sociology</option>
+                            <option value="HIS_101">World Civilization I</option>
+                            <option value="HIS_102">World Civilization II</option>
+                        </select>
+
+                        <!-- Natural Science 2-->
+                        <h2>Which natural sciences are you taking/have taken?</h2>
+                        <label for="Two_Natural_Sci">Choose Two:</label>
+                        <select id="Two_Natural_Sci" class="select">
+                            <option value="MAR_151_151L">Ocean Science and Lab</option>
+                            <option value="BSC_250_250L">Anatomy and Physiology I and Lab</option>
+                            <option value="BSC_251_251L">Anatomy and Physiology II and Lab</option>
+                            <option value="BSC_110_110L">Biological Science I and Lab</option>
+                            <option value="BSC_111_111L">Biological Science II and Lab</option>
+                            <option value="BSC_103_103L">Biology and Society and Lab</option>
+                            <option value="CHE_104_104L">Chemistry and Lab</option>
+                            <option value="AST_111_111L">General Astronomy I and Lab</option>
+                            <option value="AST_112_112L">General Astronomy II and Lab</option>
+                            <option value="CHE_106_106L">General Chemistry I and Lab</option>
+                            <option value="PHY_111_111L">General Physics I and Lab</option>
+                            <option value="PHY_112_112L">General Physics II and Lab</option>
+                            <option value="GLY_103_103L">Historical Geology and Lab</option>
+                            <option value="PHY_103_103L">Introductory Physics and Lab</option>
+                            <option value="GHY_105_105L">Land and Water and Lab</option>
+                            <option value="PSC_190_190L">Living in a Material World and Lab</option>
+                            <option value="GLY_101_101L">Physical Geology and Lab</option>
+                            <option value="PHY_201_201L">Physics I with Calculus and Lab</option>
+                            <option value="PHY_202_202L">Physics II with Calculus and Lab</option>
+                            <option value="GHY_104_104L">Weather and Climate and Lab</option>
+                        </select>
+
+                        <h4>Save your choices!</h4>
+                        <input type="submit" name="classSubmitBtn" value="Submit">
+                    </form>
                 </div>
             </div>
         </div>
