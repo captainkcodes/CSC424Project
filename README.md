@@ -33,7 +33,24 @@ step 2: type firebase serve and load the local host 5000 link by pressing (ctrl 
 and you should be in the project :D congrats!``` 
 
 
+FOR MOBILE ONLY:
 
+*for mobile editing, you can load the project folder into
+your editor of choice and edit App.js.
+you MUST have android studio and node.js installed for installing/testing to work. see the react-native-cli tab here: https://reactnative.dev/docs/environment-setup
+*
 
+for installing (using React Native CLI):
+``` npm install or npx install //to install node modules & update packages
 
+to run:
+npx react-native run-android or yarn react-native run-android
 
+make sure metro bundler server is running:
+npx start or npm start
+yarn start
+```
+
+if you need help installing or want to start developing your app, go here: https://reactnative.dev/docs/environment-setup
+
+if you want to install react native into an existing project, go here: https://reactnative.dev/docs/integration-with-existing-apps
