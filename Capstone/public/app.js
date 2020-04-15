@@ -56,7 +56,7 @@ var firebaseConfig = {
                     var data ={
                         email: user.uid
                     }
-                    ref.push(data);   
+                    ref.child(user.uid).push(data);   
                 }  
             });
 
