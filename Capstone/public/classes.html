@@ -37,189 +37,307 @@
                 </div>
             </div>
 
-            <div class="main">
-                <div class="maincontent">
+			<form action="#" method="post" id="demoForm" class="demoForm">
+    
+        
+				<h1>Freshmen</h1>
+						<textarea name="display" id="display" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea>
+			<h1>Sophomore</h1>
+						<textarea name="display" id="display2" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea>
+			<h1>Junior</h1>
+						<textarea name="display" id="display3" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea>
+			<h1>Senior</h1>
+						<textarea name="display" id="display4" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea>
+						
 
-                    <form name="classform" method="post">
-                        <h2> What classification are you?</h2>
+						<h1> please choose a year to enter your classes: </h1>
+						<select id="classification" class="select" size = "5">
 
-                        <label for="freshman">Freshman</label>
-                        <input type="checkbox" id="freshman" name="freshman" value="Freshman">
-                        
-                        <label for="sophomore">Sophomore</label>
-                        <input type="checkbox" id="sophomore" name="sophomore" value="Sophomore">
+							<option value=""></option>
+				<option value="freshman">Freshman</option>
+				<option value="sophomore">Sophomore</option>
+				<option value="junior">Junior</option>
+				<option value="Senior">Senior</option>
+</select>
 
-                        <label for="junior">Junior</label>
-                        <input type="checkbox" id="junior" name="junior" value="Junior">
+						
+<p>
+	<h1>Please choose your courses: hold control to choose more than 1 course</h1>
+<select name="classsel[]" id="classsel" size="20" multiple>
+<optgroup label="Freshman Classes">
+					<option value="MAT_167">Calculus I</option>
+					<option value="MAT_168">Calculus II</option>
+					<option value="ENG_101">Eng Composition One</option>
+					<option value="ENG_102">Eng Composition Two</option>
+					<option value="CSC_101">Computer Science I</option>
+					<option value="CSC_101L">Computer Science Lab</option>
+					<option value="CSC_102">Computer Science II</option>
+				</optgroup>
+				
+				<optgroup label="Sophomore Classes">
+					<option value="MAT_169">Calculus III</option>
+					<option value="CSC_309">Computers and Society</option>
+					<option value="CSC_206">Computer Organization</option>
+					<option value="CSC_307">Data Structures & Algorithms</option>
+					<option value="CSC_317">Object-Oriented</option>
+					<option value="ENG_203">World Literature</option>
+				</optgroup>
+				
+				<optgroup label="Junior">
+					<option value="CSC_306">Operating Systems</option>
+					<option value="CSC_408">Organization of Programming</option>
+				</optgroup>
+				
+				<optgroup label="Senior">
+					<option value="CSC_414">Software Design</option>
+					<option value="CSC_424">Software Engineering II</option>
+				</optgroup>
+				
+				<optgroup label="Aesthetic Classes">
+					<option value="ART_130">Art Appreciation</option>
+					<option value="DAN_130">Dance Appreciation</option>
+					<option value="MUS_165">Enjoyment of Music</option>
+					<option value="THE_100">Theatrical Expressions</option>
+				</optgroup>
+				
+				<optgroup label="Discrete Mathematics">
+					<option value="CSC_300">Foundations of Computer Science</option>
+					<option value="MAT_340">Discrete Mathematics</option>
+				</optgroup>
+				
+				<optgroup label="Major Requirements">
+					<option value="CSC_440">Client Side Web</option>
+					<option value="CSC_444">Introduction to Robotics</option>
+					<option value="CSC_320">Linear Programming Techniques</option>
+					<option value="CSC_441">Web Server Side</option>
+					<option value="CSC_422">Operations Research</option>
+					<option value="CSS_342">COBOL Programming</option>
+					<option value="CSS_446">Advanced Java</option>
+					<option value="CSS_431">Advanced Visual Basic</option>
+					<option value="CSS_343">C Programming</option>
+					<option value="CSS_405">CGI Programming</option>
+					<option value="CSS_417">Experimental Design</option>
+					<option value="CSS_240">FORTRAN</option>
+					<option value="CSS_442">Information Systems</option>
+					<option value="CSS_346">Introduction to Java</option>
+					<option value="CSS_416">Mathematical Statistics II</option>
+					<option value="CSS_418">Sampling Methods</option>
+					<option value="CSS_360">Unix Operating System</option>
+					<option value="CSS_460">Unix System and Network</option>
+					<option value="CSS_331">Visual Basic</option>
+				</optgroup>
+				
+				<optgroup label="Math Requirements">
+					<option value="CSS_415">Methods of Mathematical Statistics I</option>
+					<option value="MAT_320">Probability and Mathematical Statistics I</option>
+				</optgroup>
+				
+				<optgroup label="Study Requirements">
+					<option value="CSC_410">Multi Processing</option>
+					<option value="CSC_415">Theory of Programming</option>
+					<option value="CSC_412">Artificial Intelligence</option>
+					<option value="CSC_425">Computer Graphics Design</option>
+					<option value="CSC_418">Cryptography</option>
+					<option value="CSC_411">Database Management</option>
+					<option value="CSC_423">Information Retrieval</option>
+					<option value="CSC_410">Multi Processings</option>
+				</optgroup>
+				
+				<optgroup label="Behavioral Science">
+					<option value="PS_101">American Government</option>
+					<option value="HHS_100">Concepts of Wellness</option>
+					<option value="ECO_101">Economics</option>
+					<option value="PSY_110">General Psychology</option>
+					<option value="ANT_101">Human Experience</option>
+					<option value="GHY_101">World Geography</option>
+				</optgroup>
+				
+				<optgroup label="General Science">
+					<option value="BSC_110">Biological Science I</option>
+					<option value="BSC_111">Biological Science II</option>
+					<option value="CHE_106">General Chemistry I</option>
+					<option value="CHE_107">General Chemistry II</option>
+					<option value="GLY_103">Historical Geology</option>
+					<option value="GLY_101">Physical Geology</option>
+					<option value="PHY_201">Physics I with Calculus</option>
+					<option value="PHY_202">Physics II with Calculus</option>
+				</optgroup>
+				
+				<optgroup label="Humanities">
+					<option value="REL_131">Comparative Religion</option>
+					<option value="PHI_171">Ethics</option>
+					<option value="PHI_151">Philosophy</option>
+					<option value="SOC_101">Principles of Sociology</option>
+					<option value="HIS_101">World Civilization I</option>
+					<option value="HIS_102">World Civilization II</option>
+				</optgroup>
+				
+				<optgroup label="Natural Science">
+					<option value="MAR_151_151L">Ocean Science and Lab</option>
+					<option value="BSC_250_250L">Anatomy and Physiology I and Lab</option>
+					<option value="BSC_251_251L">Anatomy and Physiology II and Lab</option>
+					<option value="BSC_110_110L">Biological Science I and Lab</option>
+					<option value="BSC_111_111L">Biological Science II and Lab</option>
+					<option value="BSC_103_103L">Biology and Society and Lab</option>
+					<option value="CHE_104_104L">Chemistry and Lab</option>
+					<option value="AST_111_111L">General Astronomy I and Lab</option>
+					<option value="AST_112_112L">General Astronomy II and Lab</option>
+					<option value="CHE_106_106L">General Chemistry I and Lab</option>
+					<option value="PHY_111_111L">General Physics I and Lab</option>
+					<option value="PHY_112_112L">General Physics II and Lab</option>
+					<option value="GLY_103_103L">Historical Geology and Lab</option>
+					<option value="PHY_103_103L">Introductory Physics and Lab</option>
+					<option value="GHY_105_105L">Land and Water and Lab</option>
+					<option value="PSC_190_190L">Living in a Material World and Lab</option>
+					<option value="GLY_101_101L">Physical Geology and Lab</option>
+					<option value="PHY_201_201L">Physics I with Calculus and Lab</option>
+					<option value="PHY_202_202L">Physics II with Calculus and Lab</option>
+					<option value="GHY_104_104L">Weather and Climate and Lab</option>
+				</optgroup>
 
-                        <label for="Senior">Senior</label>
-                        <input type="checkbox" id="senior" name="senior" value="Senior">
+</select>
+<input type="submit" value="Submit" />
 
-                        <!-- for selection of classes -->
-                        <h2>Please use the menu below to pick the classes you are currently
-                            <br>taking or plan on taking in the near future.
-                        </h2>
-                        
-                        <select name="classSelect" class="select" multiple>
-                            <option>--Select Your Classes--</option>
-							<optgroup label="Freshman Classes">
-								<option value="MAT_167">Calculus I</option>
-								<option value="MAT_168">Calculus II</option>
-								<option value="ENG_101">Composition One</option>
-								<option value="ENG_102">Composition Two</option>
-								<option value="CSC_101">Computer Science I</option>
-								<option value="CSC_101L">Computer Science Lab</option>
-								<option value="CSC_102">Computer Science II</option>
-							</optgroup>
-							
-							<optgroup label="Sophomore Classes">
-								<option value="MAT_169">Calculus III</option>
-								<option value="CSC_309">Computers and Society</option>
-								<option value="CSC_206">Computer Organization</option>
-								<option value="CSC_307">Data Structures & Algorithms</option>
-								<option value="CSC_317">Object-Oriented</option>
-								<option value="ENG_203">World Literature</option>
-							</optgroup>
-							
-							<optgroup label="Junior">
-								<option value="CSC_306">Operating Systems</option>
-								<option value="CSC_408">Organization of Programming</option>
-							</optgroup>
-							
-							<optgroup label="Senior">
-								<option value="CSC_414">Software Design</option>
-								<option value="CSC_424">Software Engineering II</option>
-							</optgroup>
-							
-							<optgroup label="Aesthetic Classes">
-								<option value="ART_130">Art Appreciation</option>
-								<option value="DAN_130">Dance Appreciation</option>
-								<option value="MUS_165">Enjoyment of Music</option>
-								<option value="THE_100">Theatrical Expressions</option>
-							</optgroup>
-							
-							<optgroup label="Discrete Mathematics">
-								<option value="CSC_300">Foundations of Computer Science</option>
-								<option value="MAT_340">Discrete Mathematics</option>
-							</optgroup>
-							
-							<optgroup label="Major Requirements">
-								<option value="CSC_440">Client Side Web</option>
-								<option value="CSC_444">Introduction to Robotics</option>
-								<option value="CSC_320">Linear Programming Techniques</option>
-								<option value="CSC_441">Web Server Side</option>
-								<option value="CSC_422">Operations Research</option>
-								<option value="CSS_342">COBOL Programming</option>
-								<option value="CSS_446">Advanced Java</option>
-								<option value="CSS_431">Advanced Visual Basic</option>
-								<option value="CSS_343">C Programming</option>
-								<option value="CSS_405">CGI Programming</option>
-								<option value="CSS_417">Experimental Design</option>
-								<option value="CSS_240">FORTRAN</option>
-								<option value="CSS_442">Information Systems</option>
-								<option value="CSS_346">Introduction to Java</option>
-								<option value="CSS_416">Mathematical Statistics II</option>
-								<option value="CSS_418">Sampling Methods</option>
-								<option value="CSS_360">Unix Operating System</option>
-								<option value="CSS_460">Unix System and Network</option>
-								<option value="CSS_331">Visual Basic</option>
-							</optgroup>
-							
-							<optgroup label="Math Requirements">
-								<option value="CSS_415">Methods of Mathematical Statistics I</option>
-								<option value="MAT_320">Probability and Mathematical Statistics I</option>
-							</optgroup>
-							
-							<optgroup label="Study Requirements">
-								<option value="CSC_410">Multi Processing</option>
-								<option value="CSC_415">Theory of Programming</option>
-								<option value="CSC_412">Artificial Intelligence</option>
-								<option value="CSC_425">Computer Graphics Design</option>
-								<option value="CSC_418">Cryptography</option>
-								<option value="CSC_411">Database Management</option>
-								<option value="CSC_423">Information Retrieval</option>
-								<option value="CSC_410">Multi Processings</option>
-							</optgroup>
-							
-							<optgroup label="Behavioral Science">
-								<option value="PS_101">American Government</option>
-								<option value="HHS_100">Concepts of Wellness</option>
-								<option value="ECO_101">Economics</option>
-								<option value="PSY_110">General Psychology</option>
-								<option value="ANT_101">Human Experience</option>
-								<option value="GHY_101">World Geography</option>
-							</optgroup>
-							
-							<optgroup label="General Science">
-								<option value="BSC_110">Biological Science I</option>
-								<option value="BSC_111">Biological Science II</option>
-								<option value="CHE_106">General Chemistry I</option>
-								<option value="CHE_107">General Chemistry II</option>
-								<option value="GLY_103">Historical Geology</option>
-								<option value="GLY_101">Physical Geology</option>
-								<option value="PHY_201">Physics I with Calculus</option>
-								<option value="PHY_202">Physics II with Calculus</option>
-							</optgroup>
-							
-							<optgroup label="Humanities">
-								<option value="REL_131">Comparative Religion</option>
-								<option value="PHI_171">Ethics</option>
-								<option value="PHI_151">Philosophy</option>
-								<option value="SOC_101">Principles of Sociology</option>
-								<option value="HIS_101">World Civilization I</option>
-								<option value="HIS_102">World Civilization II</option>
-							</optgroup>
-							
-							<optgroup label="Natural Science">
-								<option value="MAR_151_151L">Ocean Science and Lab</option>
-								<option value="BSC_250_250L">Anatomy and Physiology I and Lab</option>
-								<option value="BSC_251_251L">Anatomy and Physiology II and Lab</option>
-								<option value="BSC_110_110L">Biological Science I and Lab</option>
-								<option value="BSC_111_111L">Biological Science II and Lab</option>
-								<option value="BSC_103_103L">Biology and Society and Lab</option>
-								<option value="CHE_104_104L">Chemistry and Lab</option>
-								<option value="AST_111_111L">General Astronomy I and Lab</option>
-								<option value="AST_112_112L">General Astronomy II and Lab</option>
-								<option value="CHE_106_106L">General Chemistry I and Lab</option>
-								<option value="PHY_111_111L">General Physics I and Lab</option>
-								<option value="PHY_112_112L">General Physics II and Lab</option>
-								<option value="GLY_103_103L">Historical Geology and Lab</option>
-								<option value="PHY_103_103L">Introductory Physics and Lab</option>
-								<option value="GHY_105_105L">Land and Water and Lab</option>
-								<option value="PSC_190_190L">Living in a Material World and Lab</option>
-								<option value="GLY_101_101L">Physical Geology and Lab</option>
-								<option value="PHY_201_201L">Physics I with Calculus and Lab</option>
-								<option value="PHY_202_202L">Physics II with Calculus and Lab</option>
-								<option value="GHY_104_104L">Weather and Climate and Lab</option>
-							</optgroup>
-						</select>
+</p>
 
-                        <!--<input type="submit" name="classSubmitBtn" value="Submit"> -->
-                        <button class="button" onclick="
-                            var el = document.getElementsByTagName('select')[0];
-                            console.log(getSelectValues(el));">
-                            Save Your Choices</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </body>
 
-    <script>
-        function getSelectValues(select) {
-            var result = [];
-            var options = select && select.options;
-            var opt;
+</form>
 
-            for (var i=0, iLen=options.length; i<iLen; i++) {
-                opt = options[i];
+<script>
 
-                if (opt.selected) {
-                    result.push(opt.value || opt.text);
-                }
-            }
-            console.log(result); //for debugging purposes
-            return result;
-        }
-    </script>
+// arguments: reference to select list, callback function (optional)
+function getSelectedOptions(sel, fn) {
+var opts = [], opt;
+
+// loop through options in select list
+for (var i=0, len=sel.options.length; i<len; i++) {
+opt = sel.options[i];
+
+// check if selected
+if ( opt.selected ) {
+// add to array of option elements to return from this function
+opts.push(opt);
+
+// invoke optional callback function if provided
+if (fn) {
+	fn(opt);
+}
+}
+}
+
+// return array containing references to selected option elements
+return opts;
+}
+function callback(opt) {
+// display in textarea for this example
+var x = document.getElementById("classification");
+
+var i = x.selectedIndex;
+
+if(x.selectedIndex == 1){
+var display = document.getElementById('display');
+display.innerHTML += opt.text + '\n';
+}
+
+if(x.selectedIndex == 2 ){
+var display = document.getElementById('display2');
+display.innerHTML += opt.text + '\n';
+}
+
+
+if(x.selectedIndex == 3){
+var display = document.getElementById('display3');
+display.innerHTML += opt.text + '\n';
+}
+
+
+if(x.selectedIndex == 4){
+var display = document.getElementById('display4');
+display.innerHTML += opt.text + '\n';
+}
+
+}
+
+document.getElementById('classsel').onchange = function(e) {
+
+var x = document.getElementById("classification");
+
+var i = x.selectedIndex;
+
+if(x.selectedIndex == 1){
+// get reference to display textarea
+var display = document.getElementById('display');
+display.innerHTML = ''; // reset
+
+// callback fn handles selected options
+getSelectedOptions(this, callback);
+
+// remove ', ' at end of string
+var str = display.innerHTML;
+display.innerHTML = str;
+}
+
+if(x.selectedIndex == 2 ){
+// get reference to display textarea
+var display = document.getElementById('display2');
+display.innerHTML = ''; // reset
+
+// callback fn handles selected options
+getSelectedOptions(this, callback);
+
+// remove ', ' at end of string
+var str = display.innerHTML;
+display.innerHTML = str;
+}
+
+
+if(x.selectedIndex == 3){
+// get reference to display textarea
+var display = document.getElementById('display3');
+display.innerHTML = ''; // reset
+
+// callback fn handles selected options
+getSelectedOptions(this, callback);
+
+// remove ', ' at end of string
+var str = display.innerHTML;
+display.innerHTML = str;
+}
+
+
+if(x.selectedIndex == 4){
+// get reference to display textarea
+var display = document.getElementById('display4');
+display.innerHTML = ''; // reset
+
+// callback fn handles selected options
+getSelectedOptions(this, callback);
+
+// remove ', ' at end of string
+var str = display.innerHTML;
+display.innerHTML = str;
+}
+};
+
+document.getElementById('demoForm').onsubmit = function(e) {
+// reference to select list using this keyword and form elements collection
+// no callback function used this time
+var opts = getSelectedOptions( this.elements['classsel[]'] );
+
+alert( 'The number of options selected is: ' + opts.length ); //  number of selected options
+
+var x = document.getElementById("classification");
+
+var i = x.selectedIndex;
+
+
+
+
+
+
+return false; 
+};
+</script>
+
+</body>
 </html>
