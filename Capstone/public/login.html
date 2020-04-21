@@ -3,11 +3,11 @@
 <!-- after user logs in this page should redirect to a 
 landing page that lets them choose whether they want to
 view events, research classes, or create task lists-->
-<html>
+<html class="theme-light">
 
     <head>
         <title> Login </title>
-        <link rel="stylesheet" type="text/css" href="forms.css">
+        <link rel="stylesheet" type="text/css" href="theme.css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,6 +19,7 @@ view events, research classes, or create task lists-->
         <script src="/__/firebase/7.13.1/firebase-functions.js"></script>
         <script src="/__/firebase/7.13.1/firebase-storage.js"></script>
         <script src="app.js"></script>
+        <script src="themeSwith.js"></script>
 
     </head>
 
@@ -27,6 +28,7 @@ view events, research classes, or create task lists-->
 
             <div class="header">
                 <h1> Login </h1>
+                <button id="switch" onclick="toggleTheme()">Switch Themes</button>
 
                 <div class="navbar">
                     <a href="index.html"> Home </a>

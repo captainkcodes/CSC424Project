@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html>
+<html class="theme-light">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Events </title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="theme.css">
 
         <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
@@ -16,6 +16,8 @@
         <script src="/__/firebase/7.13.1/firebase-functions.js"></script>
         <script src="/__/firebase/7.13.1/firebase-storage.js"></script>
         <script src="app.js"></script>
+        <script src="themeSwith.js"></script>
+        
 </head>
 
 <body>
@@ -24,7 +26,7 @@
 
         <div class="header">
             <h1> Events </h1>
-
+            <button id="switch" onclick="toggleTheme()">Switch Themes</button>
             <div class="navbar">
                 <ul class="breadcrumb">
                     <li><a href="index.html">Home</a></li>

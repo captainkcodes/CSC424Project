@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html class="theme-light">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Schedule Me</title>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css'><link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css'><link rel="stylesheet" type="text/css" href="theme.css">
     
     <script src="https://use.fontawesome.com/1d70b9172e.js"></script>
 
@@ -16,25 +16,15 @@
         <script src="/__/firebase/7.13.1/firebase-functions.js"></script>
         <script src="/__/firebase/7.13.1/firebase-storage.js"></script>
         <script src="app.js"></script>
-        <script src="js/theme.js"></script>
+        <script src="themeSwith.js"></script>
   </head>
 
   <body>
-
 	<div class="container">
     
 		<div class="header">
         <h1> Schedule Me </h1>
-
-        <div class="navbar">
-         <!-- <a href="landingpage.html">Landing Page (temp navigation)</a> -->
-          <input type="checkbox" class="checkbox" id="checkbox">
-          <label for="checkbox" class="label">
-            <i class="fas fa-moon"></i>
-            <i class="fas fa-sun"></i>
-            <div class="ball"></div>
-          </label>
-        </div>
+        <button id="switch" onclick="toggleTheme()">Switch Themes</button>
 		</div>
 		
 		<div class="main">

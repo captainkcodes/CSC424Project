@@ -5,7 +5,7 @@ should redirect to the home page so that the
 user can login with the info they just put
 into the system
 -->
-<html>
+<html class="theme-light">
 
     <head>
         <title> Create Account </title>
@@ -21,6 +21,7 @@ into the system
         <script src="/__/firebase/7.13.1/firebase-functions.js"></script>
         <script src="/__/firebase/7.13.1/firebase-storage.js"></script>
         <script src="app.js"></script>
+        <script src="themeSwith.js"></script>
 
     </head>
 
@@ -29,6 +30,7 @@ into the system
 
             <div class="header">
                 <h1> Create Account </h1>
+                <button id="switch" onclick="toggleTheme()">Switch Themes</button>
 
                 <div class="navbar">
                     <a href="index.html"> Home </a>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
-<html>
+<html class="theme-light">
 
     <head>
         <title> Class Search</title>
-        <link rel="stylesheet" type="text/css" href="forms.css">
+        <link rel="stylesheet" type="text/css" href="theme.css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -25,6 +25,7 @@
             <div class="header">
                 <h1> Class Search</h1>
 
+				<button id="switch" onclick="toggleTheme()">Switch Themes</button>
                 <div class="navbar">
 
                     <ul class="breadcrumb">
@@ -38,33 +39,29 @@
             </div>
 
 			<form action="#" method="post" id="demoForm" class="demoForm">
-    
-        
-				<h1>Freshmen</h1>
+				<div class="textFields">
+					<h1 style="font-family: monospace;">Freshmen</h1>
 						<textarea name="display" id="display" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea>
-			<h1>Sophomore</h1>
+					<h1 style="font-family: monospace;">Sophomore</h1>
 						<textarea name="display" id="display2" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea>
-			<h1>Junior</h1>
+					<h1 style="font-family: monospace;">Junior</h1>
 						<textarea name="display" id="display3" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea>
-			<h1>Senior</h1>
+					<h1 style="font-family: monospace;">Senior</h1>
 						<textarea name="display" id="display4" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea>
-						
+				</div>
 
-						<h1> please choose a year to enter your classes: </h1>
-						<select id="classification" class="select" size = "5">
-
+						<h1 style="font-family: monospace;"> Please choose a year to enter your classes: </h1>
+						<select id="classification" size = "5">
 							<option value=""></option>
-				<option value="freshman">Freshman</option>
-				<option value="sophomore">Sophomore</option>
-				<option value="junior">Junior</option>
-				<option value="Senior">Senior</option>
-</select>
-
-						
-<p>
-	<h1>Please choose your courses: hold control to choose more than 1 course</h1>
-<select name="classsel[]" id="classsel" size="20" multiple>
-<optgroup label="Freshman Classes">
+							<option value="freshman">Freshman</option>
+							<option value="sophomore">Sophomore</option>
+							<option value="junior">Junior</option>
+							<option value="Senior">Senior</option>
+						</select>
+					<p>
+				<h1 style="font-family: monospace;">Please choose your courses. Tip: hold control to choose more than 1 course</h1>
+				<select name="classsel[]" id="classsel" size="20" multiple>
+				<optgroup label="Freshman Classes">
 					<option value="MAT_167">Calculus I</option>
 					<option value="MAT_168">Calculus II</option>
 					<option value="ENG_101">Eng Composition One</option>
@@ -195,15 +192,15 @@
 					<option value="GHY_104_104L">Weather and Climate and Lab</option>
 				</optgroup>
 
-</select>
-<input type="submit" value="Submit" />
+			</select>
+			<input type="submit" value="Submit" />
 
-</p>
+			</p>
 
 
-</form>
+			</form>
 
-<script>
+		<script>
 
 // arguments: reference to select list, callback function (optional)
 function getSelectedOptions(sel, fn) {
@@ -329,11 +326,6 @@ alert( 'The number of options selected is: ' + opts.length ); //  number of sele
 var x = document.getElementById("classification");
 
 var i = x.selectedIndex;
-
-
-
-
-
 
 return false; 
 };
