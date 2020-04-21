@@ -7,15 +7,18 @@ function setTheme(themeName) {
 function toggleTheme() {
  if (localStorage.getItem('theme') === 'theme-dark'){
      setTheme('theme-light');
- } else {
+ } else if (localStorage.getItem('theme') === 'theme-colorful'){
+     setTheme('theme-colorful');
+ } else
      setTheme('theme-dark');
  }
-}
 // Immediately invoked function to set the theme on initial load
 (function () {
  if (localStorage.getItem('theme') === 'theme-dark') {
      setTheme('theme-dark');
- } else {
+ } else if (localStorage.getItem('theme') === 'theme-colorful'){
+     setTheme('theme-colorful');
+ }else {
      setTheme('theme-light');
  }
 })();
