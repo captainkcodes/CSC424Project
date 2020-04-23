@@ -115,6 +115,7 @@ main {
 
         @include desktop{
             justify-content: space-evenly;
+            align-content: space-between;
         }
 
         #display {
