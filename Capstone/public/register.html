@@ -5,11 +5,11 @@ should redirect to the home page so that the
 user can login with the info they just put
 into the system
 -->
-<html class="theme-light">
+<html>
 
     <head>
         <title> Create Account </title>
-        <link rel="stylesheet" type="text/css" href="theme.css">
+        <link rel="stylesheet" type="text/css" href="/css/styles.css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,47 +21,35 @@ into the system
         <script src="/__/firebase/7.13.1/firebase-functions.js"></script>
         <script src="/__/firebase/7.13.1/firebase-storage.js"></script>
         <script src="app.js"></script>
-        <script src="themeSwith.js"></script>
 
     </head>
 
     <body>
-        <div class="container">
 
-            <div class="header">
-                <h1> Create Account </h1>
-                <button id="switch" onclick="toggleTheme()">Switch Themes</button>
+        <div id="bg"></div>
+        
+        <header>
+            <h1>Create Account</h1>
 
-                <div class="navbar">
-                    <a href="index.html"> Home </a>
-                </div>
-            </div>
+            <nav>
+                <a href="index.html">Home</a>
+            </nav>
+        </header>
 
-            <div class="main">
+        <main>
+            <form action="" method="post" name="regform">
+                <label for="email">Email:</label>
+                <input type="email" placeholder="jdoe@example.com" id="email"/>
 
-                <div class="maincontent">
-                    <form action="" method="post" name="regform">
-
-                       
-                        <input type="email" placeholder="jdoe@example.com" id="email"/>
-                        <input type="password" placeholder="pass" id="password"/>
-                       
-                        
-                      </form>
-                    <p> <button class="button" onclick="signUp()" id="signUp"> Sign Up</button> </p> 
-                      <p>Already have an account? <a href="login.html"> Login.</a> </p>
-                </div>
-            </div>
-        </div>
-             <!-- WILL NOT WORK INSIDE DIV, POSSIBLE CSS CONFLICTING-->
+                <label for="password">Password:</label>
+                <input type="password" placeholder="pass" id="password"/>
+                                   
+            </form>
             
+            <button class="btn btn-sm animated-button thar-one" onclick="signUp()" id="signUp"> Sign Up</button>
+
+            <p>Already have an account? <a href="login.html"> Login.</a> </p>
+        </main>
+
     </body>
 </html>
-
-<script>
-
-    function windowReplacer()
-    {
-        window.location.href="index.html";
-    }
-</script>

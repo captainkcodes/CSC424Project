@@ -3,11 +3,11 @@
 <!-- after user logs in this page should redirect to a 
 landing page that lets them choose whether they want to
 view events, research classes, or create task lists-->
-<html class="theme-light">
+<html>
 
     <head>
         <title> Login </title>
-        <link rel="stylesheet" type="text/css" href="theme.css">
+        <link rel="stylesheet" type="text/css" href="/css/styles.css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,55 +19,38 @@ view events, research classes, or create task lists-->
         <script src="/__/firebase/7.13.1/firebase-functions.js"></script>
         <script src="/__/firebase/7.13.1/firebase-storage.js"></script>
         <script src="app.js"></script>
-        <script src="themeSwith.js"></script>
 
     </head>
 
     <body>
-        <div class="container">
 
-            <div class="header">
-                <h1> Login </h1>
-                <button id="switch" onclick="toggleTheme()">Switch Themes</button>
+        <div id="bg"></div>
 
-                <div class="navbar">
-                    <a href="index.html"> Home </a>
-                </div>
-            </div>
+        <header>
+            <h1> Login </h1>
 
-            <div class="main">
+            <nav>
+                <a href="index.html"> Home </a>
+            </nav>
+        </header>
 
-                <div class="maincontent">
-                    <form action="" method="post" name="logform">
-                        <label for="email">Email: </label>
-                        <input type="email" placeholder="jdoe@example.com" id="email" required/>
+        <main>
+            <form action="" method="post" name="logform">
+                <label for="email">Email: </label>
+                <input type="email" placeholder="jdoe@example.com" id="email" required/>
               
-                        <label for="password"> Password: </label>
-                        <input type="password" name="pass" id="password" required>
-
-                        
-                        
+                <label for="password"> Password: </label>
+                <input type="password" name="pass" id="password" required>
                        
-                      </form>
-                    <p> <button class="button" onclick="signIn()" id="signIn"> Log In</button>
-                     <!-- google login button -->                                      
-                     <button class="button" onclick="googleLogin()"> Login With Google </button> </p>
-                      <p>Don't have an account? <a href="register.html"> Create one.</a> </p>
-                </div>
-            </div>
-        </div>
-        
-        
-             <!-- WILL NOT WORK INSIDE DIV, POSSIBLE CSS CONFLICTING-->
-       <!-- <button onclick="signIn()" id="signIn"> Sign in</button> -->
+            </form>
+                
+            <p> <button class="btn btn-sm animated-button thar-two" onclick="signIn()" id="signIn"> Log In</button>
+                     
+            <!-- google login button -->                                      
+            <p><button class="btn btn-sm animated-button thar-two" onclick="googleLogin()"> Login With Google </button> </p>
+            
+            <br>
+            <br>
+            <p>Don't have an account? <a href="register.html"> Create one.</a> </p>
     </body>
 </html>
-
-<script>
-
-    function windowReplacer()
-    {
-        window.location.href="landingpage.html";
-    }
-</script>
-

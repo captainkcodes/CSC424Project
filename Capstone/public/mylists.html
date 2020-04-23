@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html class="theme-light">
+<html>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Lists</title>
-    <link rel="stylesheet" type="text/css" href="theme.css">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
     <script src="js/todo.js"></script>
 
         <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
@@ -17,17 +17,16 @@
         <script src="/__/firebase/7.13.1/firebase-functions.js"></script>
         <script src="/__/firebase/7.13.1/firebase-storage.js"></script>
         <script src="app.js"></script>
-        <script src="themeSwith.js"></script>
 </head>
 
 <body>
 
-    <div class="container">
+    <div id="bg"></div>
 
-        <div class="header">
+        <header>
             <h1> To-Do Lists </h1>
-            <button id="switch" onclick="toggleTheme()">Switch Themes</button>
-            <div class="navbar">
+
+            <nav>
                 <ul class="breadcrumb">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="events.html">Events</a></li>
@@ -35,10 +34,10 @@
                     <li><a href="classes.html">Class Search</a></li>
                     <li><a onclick="signOut()" id="signOut" >  Log out </a></li>
                 </ul>
-            </div>
-        </div>
+            </nav>
+        </header>
 
-        <div class="maincontent">
+        <main>
 
             <!-- For Work Related Tasks-->
             <div class="work-task">
@@ -58,8 +57,7 @@
                 <div id="worktodo-list"> </div>
             </div>
 
-        </div>
-    </div>
+        </main>
 </body>
 
 </html>

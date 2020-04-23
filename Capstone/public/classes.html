@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
-<html class="theme-light">
+<html>
 
     <head>
         <title> Class Search</title>
-        <link rel="stylesheet" type="text/css" href="theme.css">
+        <link rel="stylesheet" type="text/css" href="/css/styles.css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,46 +19,46 @@
     </head>
 
     <body>
+		<div id="bg"></div>
 
-        <div class="container">
+        <header>
+			<h1> Class Search</h1>
+			
+			<nav>
 
-            <div class="header">
-                <h1> Class Search</h1>
+				<ul class="breadcrumb">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="events.html">Events</a></li>
+					<li><a href="mylists.html">To-Do Lists</a></li>
+					<li><a href="classes.html">Class Search</a></li>
+					<li><a onclick="signOut()" id="signOut" >  Log out </a></li>
+				</ul>
 
-				<button id="switch" onclick="toggleTheme()">Switch Themes</button>
-                <div class="navbar">
+			</nav>
+		</header>
 
-                    <ul class="breadcrumb">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="events.html">Events</a></li>
-                        <li><a href="mylists.html">To-Do Lists</a></li>
-                        <li><a href="classes.html">Class Search</a></li>
-                        <li><a onclick="signOut()" id="signOut" >  Log out </a></li>
-                    </ul>
-                </div>
-            </div>
+		<main>
+			<section id="demoForm">
+				<h1 style="font-family: monospace;">Freshmen</h1>
+					<textarea name="display" id="display" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea>
+				<h1 style="font-family: monospace;">Sophomore</h1>
+					<textarea name="display" id="display2" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea>
+				<h1 style="font-family: monospace;">Junior</h1>
+					<textarea name="display" id="display3" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea>
+				<h1 style="font-family: monospace;">Senior</h1>
+					<textarea name="display" id="display4" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea>
+			
+			</section>
 
-			<form action="#" method="post" id="demoForm" class="demoForm">
-				<div class="textFields">
-					<h1 style="font-family: monospace;">Freshmen</h1>
-						<textarea name="display" id="display" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea>
-					<h1 style="font-family: monospace;">Sophomore</h1>
-						<textarea name="display" id="display2" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea>
-					<h1 style="font-family: monospace;">Junior</h1>
-						<textarea name="display" id="display3" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea>
-					<h1 style="font-family: monospace;">Senior</h1>
-						<textarea name="display" id="display4" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea>
-				</div>
+			<section id="selects">
+				<h1 style="font-family: monospace;"> Please choose a year to enter your classes: </h1>
+				<select id="classification" size = "4">
+					<option value="freshman">Freshman</option>
+					<option value="sophomore">Sophomore</option>
+					<option value="junior">Junior</option>
+					<option value="Senior">Senior</option>
+				</select>
 
-						<h1 style="font-family: monospace;"> Please choose a year to enter your classes: </h1>
-						<select id="classification" size = "5">
-							<option value=""></option>
-							<option value="freshman">Freshman</option>
-							<option value="sophomore">Sophomore</option>
-							<option value="junior">Junior</option>
-							<option value="Senior">Senior</option>
-						</select>
-					<p>
 				<h1 style="font-family: monospace;">Please choose your courses. Tip: hold control to choose more than 1 course</h1>
 				<select name="classsel[]" id="classsel" size="20" multiple>
 				<optgroup label="Freshman Classes">
@@ -193,12 +193,13 @@
 				</optgroup>
 
 			</select>
-			<input type="submit" value="Submit" />
+			</section>
+		
+			<section id="submitBtn">
+				<input type="submit" value="Submit" />
+			</section>
 
-			</p>
-
-
-			</form>
+		</main>
 
 		<script>
 
