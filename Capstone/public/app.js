@@ -15,8 +15,13 @@ var firebaseConfig = {
         const auth = firebase.auth();
         var database = firebase.database(); 
         var ref = database.ref('users');
-        
-        
+
+        function erData(err){
+
+
+
+        }
+
         auth.onAuthStateChanged(function(user){
             
             if(user){
@@ -53,10 +58,25 @@ var firebaseConfig = {
                 if(user){
                     window.location.href="landingpage.html" 
 
-                    var data ={
-                        email: user.uid
-                    }
-                    ref.child(user.uid).push(data);   
+
+                    ref.child(user.uid).set({
+                        Freshmen: {
+                          "Freshmenclass": "tba"
+                          
+                        },
+                        Softmore: {
+                            "Softmoreclass": "tba"
+                            
+                          },
+                          Junior: {
+                            "Juniorclass": "tba"
+                            
+                          },
+                        Senior: {
+                            "Seniorclass": "tba"
+                          
+                        }
+                      });
                 }  
             });
 
@@ -107,12 +127,32 @@ function googleLogin() {
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider)
     .then(result => { 
-            const user= result.user;
-            document.write(`Welcome ${user.displayName} to Schedule Me`);
-            console.log(user)
+        auth.onAuthStateChanged(function(user){
+            if(user){
+                window.location.href="landingpage.html" 
 
-            //hopefully redirects to landing page
-            window.location.href="landingpage.html";
+              
+                ref.child(user.uid).set({
+                    Freshmen: {
+                        "Freshmenclass": "tba"
+                        
+                      },
+                      Softmore: {
+                          "Softmoreclass": "tba"
+                          
+                        },
+                        Junior: {
+                          "Juniorclass": "tba"
+                          
+                        },
+                      Senior: {
+                          "Seniorclass": "tba"
+                        
+                      }
+                  });   
+            }  
+        });
+
     })
     .catch(console.log)
 }
