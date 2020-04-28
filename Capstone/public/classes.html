@@ -212,6 +212,51 @@
 
 		<script>
 
+let orderButton = document.getElementById("order");
+let itemList = document.getElementById("classsel");
+let outputBox = document.getElementById("output");
+var x = document.getElementById("classification");
+
+var i = x.selectedIndex;
+
+ function thebutton() {
+  let collection = itemList.selectedOptions;
+  let output = "";
+  var database = firebase.database(); 
+  var ref = database.ref('users');
+  var user = firebase.auth().currentUser;
+
+  firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+  // User is signed in.
+  for (let i=0; i<collection.length; i++) {
+
+output = collection[i].label;
+					if(x.selectedIndex == 0)
+					ref.child(user.uid).child('Freshmen').push().set({
+						"Freshmenclass": output
+					});
+					if(x.selectedIndex == 1)
+					ref.child(user.uid).child('Sophomore').push().set({
+						"Sophomoreclass": output
+					});
+					if(x.selectedIndex == 2)
+					ref.child(user.uid).child('Junior').push().set({
+						"Juniorclass": output
+					});
+					if(x.selectedIndex == 3)
+					ref.child(user.uid).child('Senior').push().set({
+						"Seniorclass": output
+					});
+					
+}
+}
+	});
+
+}
+
+
+
 // arguments: reference to select list, callback function (optional)
 function getSelectedOptions(sel, fn) {
 var opts = [], opt;
@@ -238,27 +283,26 @@ return opts;
 function callback(opt) {
 // display in textarea for this example
 var x = document.getElementById("classification");
-
 var i = x.selectedIndex;
 
-if(x.selectedIndex == 1){
+if(x.selectedIndex == 0){
 var display = document.getElementById('display');
 display.innerHTML += opt.text + '\n';
 }
 
-if(x.selectedIndex == 2 ){
+if(x.selectedIndex == 1 ){
 var display = document.getElementById('display2');
 display.innerHTML += opt.text + '\n';
 }
 
 
-if(x.selectedIndex == 3){
+if(x.selectedIndex == 2){
 var display = document.getElementById('display3');
 display.innerHTML += opt.text + '\n';
 }
 
 
-if(x.selectedIndex == 4){
+if(x.selectedIndex == 3){
 var display = document.getElementById('display4');
 display.innerHTML += opt.text + '\n';
 }
@@ -271,7 +315,7 @@ var x = document.getElementById("classification");
 
 var i = x.selectedIndex;
 
-if(x.selectedIndex == 1){
+if(x.selectedIndex == 0){
 // get reference to display textarea
 var display = document.getElementById('display');
 display.innerHTML = ''; // reset
@@ -284,7 +328,7 @@ var str = display.innerHTML;
 display.innerHTML = str;
 }
 
-if(x.selectedIndex == 2 ){
+if(x.selectedIndex == 1 ){
 // get reference to display textarea
 var display = document.getElementById('display2');
 display.innerHTML = ''; // reset
@@ -298,7 +342,7 @@ display.innerHTML = str;
 }
 
 
-if(x.selectedIndex == 3){
+if(x.selectedIndex == 2){
 // get reference to display textarea
 var display = document.getElementById('display3');
 display.innerHTML = ''; // reset
@@ -312,7 +356,7 @@ display.innerHTML = str;
 }
 
 
-if(x.selectedIndex == 4){
+if(x.selectedIndex == 3){
 // get reference to display textarea
 var display = document.getElementById('display4');
 display.innerHTML = ''; // reset
@@ -330,8 +374,6 @@ document.getElementById('demoForm').onsubmit = function(e) {
 // reference to select list using this keyword and form elements collection
 // no callback function used this time
 var opts = getSelectedOptions( this.elements['classsel[]'] );
-
-alert( 'The number of options selected is: ' + opts.length ); //  number of selected options
 
 var x = document.getElementById("classification");
 
