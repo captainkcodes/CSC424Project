@@ -64,8 +64,8 @@ var firebaseConfig = {
                           "Freshmenclass": "tba"
                           
                         },
-                        Softmore: {
-                            "Softmoreclass": "tba"
+                        Sophomore: {
+                            "Sophomoreclass": "tba"
                             
                           },
                           Junior: {
@@ -137,8 +137,8 @@ function googleLogin() {
                         "Freshmenclass": "tba"
                         
                       },
-                      Softmore: {
-                          "Softmoreclass": "tba"
+                      Sophomore: {
+                          "Sophomoreclass": "tba"
                           
                         },
                         Junior: {
