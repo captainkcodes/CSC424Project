@@ -40,6 +40,7 @@
 		</header>
 
 		<main>
+			<form id=classForm>
 			<section id="demoForm">
 				<d1>
 					<da1><h1 style="font-family: monospace;">Freshmen</h1></da1>
@@ -210,7 +211,7 @@
 					Order Now
 				  </button>
 			</section>
-
+			</form>
 		</main>
 
 		<script>
@@ -255,6 +256,21 @@ output = collection[i].label;
 }
 }
 	});
+
+	orderButton.addEventListener("click", function() {
+		var freshTextArea = document.getElementById('display').value;
+		var sophTextArea = document.getElementById('display2').value;
+		var junTextArea = document.getElementById('display3').value;
+		var senTextArea = document.getElementById('display4').value;
+
+		localStorage.setItem('Freshman Classes', freshTextArea);
+		localStorage.setItem('Sophomore Classes', sophTextArea);
+		localStorage.setItem('Junior Classes', junTextArea);
+		localStorage.setItem('Senior Classes', senTextArea);
+
+		alert("Classes saved!");
+		console.log("Classes saved!")
+	} , false);
 
 }
 
@@ -384,6 +400,7 @@ var i = x.selectedIndex;
 
 return false; 
 };
+
 </script>
 
 </body>
