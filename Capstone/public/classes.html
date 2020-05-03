@@ -30,6 +30,7 @@
 
 				<ul class="breadcrumb">
 					<li><a href="index.html">Home</a></li>
+					<li><a href="predict.html">Recommendation</a></li>
 					<li><a href="events.html">Events</a></li>
 					<li><a href="mylists.html">To-Do Lists</a></li>
 					<li><a href="classes.html">Class Search</a></li>
@@ -208,13 +209,18 @@
 		
 			<section id="submitBtn">
 				<button name="order" id="order" onclick="thebutton()">
-					Order Now
+					Submit
 				  </button>
 			</section>
+
+			<da2><textarea name="display" id="display5" placeholder="classes choosen" cols="30" rows="30" readonly></textarea></da2>
+				
 			</form>
+			
 		</main>
 
 		<script>
+
 
 let orderButton = document.getElementById("order");
 let itemList = document.getElementById("classsel");
@@ -224,6 +230,7 @@ var x = document.getElementById("classification");
 var i = x.selectedIndex;
 
  function thebutton() {
+	 
   let collection = itemList.selectedOptions;
   let output = "";
   var database = firebase.database(); 
@@ -256,6 +263,8 @@ output = collection[i].label;
 }
 }
 	});
+
+	
 
 	orderButton.addEventListener("click", function() {
 		var freshTextArea = document.getElementById('display').value;
@@ -325,7 +334,8 @@ if(x.selectedIndex == 3){
 var display = document.getElementById('display4');
 display.innerHTML += opt.text + '\n';
 }
-
+var display = document.getElementById('display5');
+display.innerHTML += opt.text + '\n';
 }
 
 document.getElementById('classsel').onchange = function(e) {
