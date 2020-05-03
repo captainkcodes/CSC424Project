@@ -13,14 +13,9 @@ var firebaseConfig = {
       firebase.initializeApp(firebaseConfig);
              
         const auth = firebase.auth();
-        var database = firebase.database(); 
-        var ref = database.ref('users');
-
-        function erData(err){
 
 
 
-        }
 
         auth.onAuthStateChanged(function(user){
             
