@@ -13,10 +13,10 @@ var firebaseConfig = {
       firebase.initializeApp(firebaseConfig);
              
         const auth = firebase.auth();
-
-
-
-
+        var database = firebase.database(); 
+        var ref = database.ref('users');
+      
+        
         auth.onAuthStateChanged(function(user){
             
             if(user){
@@ -38,7 +38,6 @@ var firebaseConfig = {
         
 
 
-  
         function signUp(){
             var email = document.getElementById("email");
             var password = document.getElementById("password");
@@ -94,7 +93,7 @@ var firebaseConfig = {
                         }  
                     });
 
-        }
+        } 
         
         
         function signOut(){    
@@ -126,25 +125,25 @@ function googleLogin() {
             if(user){
                 window.location.href="landingpage.html" 
 
-              
+
                 ref.child(user.uid).set({
                     Freshmen: {
-                        "Freshmenclass": "tba"
+                      "Freshmenclass": "tba"
+                      
+                    },
+                    Sophomore: {
+                        "Sophomoreclass": "tba"
                         
                       },
-                      Sophomore: {
-                          "Sophomoreclass": "tba"
-                          
-                        },
-                        Junior: {
-                          "Juniorclass": "tba"
-                          
-                        },
-                      Senior: {
-                          "Seniorclass": "tba"
+                      Junior: {
+                        "Juniorclass": "tba"
                         
-                      }
-                  });   
+                      },
+                    Senior: {
+                        "Seniorclass": "tba"
+                      
+                    }
+                  });
             }  
         });
 
