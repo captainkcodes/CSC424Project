@@ -13,9 +13,10 @@ var firebaseConfig = {
       firebase.initializeApp(firebaseConfig);
              
         const auth = firebase.auth();
-        var database = firebase.database(); 
+        var database = firebase.database();
+        //var useridz = firebase.auth().currentuser.uid; 
         var ref = database.ref('users');
-      
+ 
         
         auth.onAuthStateChanged(function(user){
             
@@ -36,8 +37,71 @@ var firebaseConfig = {
             
         });
         
+        function checkclasses(){   
+            auth.onAuthStateChanged(function(user){
+            
+                if(user){
+                    
+                    ref.child(user.uid).child('Freshmen').on("child_added", snap => {
+                       
+                        
+                        //console.log(snap.val()); 
+                       // console.log(snap.key); 
+                    }); 
+                    
+             
+
+ref.child(user.uid).child('Freshmen').on("child_added", function(data) {
+   var newPlayer = data.val();
+   var x = document.getElementById("classification");
+
+   if(newPlayer.Freshmenclass != undefined){
+   document.getElementById('display').innerHTML += "freshmen class: "+ newPlayer.Freshmenclass + "\n";
+   
+   }
+});
+
+ref.child(user.uid).child('Sophomore').on("child_added", function(data) {
+    var newPlayer = data.val();
+    var x = document.getElementById("classification");
+    
+    if(newPlayer.Sophomoreclass != undefined){
+    document.getElementById('display2').innerHTML += "Sophomoreclass: " + newPlayer.Sophomoreclass + "\n";
+    }
+
+});
 
 
+ref.child(user.uid).child('Junior').on("child_added", function(data) {
+    var newPlayer = data.val();
+    var x = document.getElementById("classification");
+    
+    if(newPlayer.Juniorclass != undefined){
+    document.getElementById('display3').innerHTML += "Juniorclass: " + newPlayer.Juniorclass + "\n";
+    }   
+
+});
+
+
+
+ref.child(user.uid).child('Senior').on("child_added", function(data) {
+    var newPlayer = data.val();
+    var x = document.getElementById("classification");
+    
+    if(newPlayer.Seniorclass != undefined){
+    document.getElementById('display4').innerHTML += "Seniorclass:" + newPlayer.Seniorclass + "\n";
+    }
+
+});
+
+                }  
+            });
+
+
+
+
+    }
+  
         function signUp(){
             var email = document.getElementById("email");
             var password = document.getElementById("password");
