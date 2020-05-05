@@ -20,23 +20,21 @@
         <script src="app.js"></script>
     </head>
 
-    <body>
+   <body>
 		<div id="bg"></div>
 
         <header>
 			<h1> Class Search</h1>
 			
 			<nav>
-
 				<ul class="breadcrumb">
 					<li><a href="index.html">Home</a></li>
-					<li><a href="predict.html">Recommendation</a></li>
+					<li><a href="predict.html">Recommender</a></li>
 					<li><a href="events.html">Events</a></li>
 					<li><a href="mylists.html">To-Do Lists</a></li>
 					<li><a href="classes.html">Class Search</a></li>
-					<li><a onclick="signOut()" id="signOut" >  Log out </a></li>
+					<li><a onclick="signOut()" id="signOut"> Log out</a></li>
 				</ul>
-
 			</nav>
 		</header>
 
@@ -53,7 +51,11 @@
 
 
 				<button onclick="checkclasses()">
-					check classes
+					check saved classes
+				  </button>
+
+				  <button onclick="removeclass()">
+					remove saved classes
 				  </button>
 
 			</section>
