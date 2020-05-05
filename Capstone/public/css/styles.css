@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap");
+@import url("stylesheet.css");
+
 body {
   font-family: monospace;
   margin: 0;

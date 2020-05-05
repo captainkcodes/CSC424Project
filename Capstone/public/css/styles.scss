@@ -31,6 +31,7 @@ $desktop: 840px; //perfect for switching from mobile to desktop
 body {
     font-family: monospace;
     margin: 0;
+    text-align: center;
 
     header {
         background-color: color(accent-color);
@@ -51,6 +52,10 @@ body {
 
     a:hover {
         color: color(accent-color);
+    }
+
+    p {
+        text-align: center;
     }
 }
 
