@@ -41,23 +41,20 @@
 		</header>
 
 		<main>
-			<form id=classForm action="predict.html">
 			<section id="demoForm">
-				<d1>
-					<da1><h1 style="font-family: monospace;">Freshmen:</h1></da1>
-					<da2><textarea name="display" id="display" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea></da2>
-				
-					<db1><h1 style="font-family: monospace;">Sophomore:</h1></db1>
-					<db2><textarea name="display" id="display2" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea></db2>
-				
-					<dc1><h1 style="font-family: monospace;">Junior:</h1></dc1>
-					<dc2><textarea name="display" id="display3" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea></dc2>
-			
+				<h1 style="font-family: monospace;">Freshmen</h1>
+					<textarea name="display" id="display" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea>
+				<h1 style="font-family: monospace;">Sophomore</h1>
+					<textarea name="display" id="display2" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea>
+				<h1 style="font-family: monospace;">Junior</h1>
+					<textarea name="display" id="display3" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea>
+				<h1 style="font-family: monospace;">Senior</h1>
+				<textarea name="display" id="display4" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea>
 
-					<dd1><h1 style="font-family: monospace;">Senior:</h1></dd1>
-					<dd2><textarea name="display" id="display4" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea></dd2>
-				
-				</d1>
+
+				<button onclick="checkclasses()">
+					check classes
+				  </button>
 
 			</section>
 
@@ -205,32 +202,26 @@
 
 			</select>
 			</section>
+		
 
-			<da2><textarea name="display" id="display5" placeholder="classes choosen" cols="30" rows="30" readonly></textarea></da2>
-
-			<br>
-				<p><button name="order" id="order" onclick="thebutton()">
+			<section id="submitBtn">
+				<button name="order" id="order" onclick="thebutton()">
 					Submit
-				  </button></p>
+				  </button>
 			</section>
-				
-			</form>
-			
+
 		</main>
 
-</body>
-</html>
+		<script>
 
-<script>
-	let orderButton = document.getElementById("order");
+
+let orderButton = document.getElementById("order");
 let itemList = document.getElementById("classsel");
-let outputBox = document.getElementById("output");
 var x = document.getElementById("classification");
 
 var i = x.selectedIndex;
 
  function thebutton() {
-	 
   let collection = itemList.selectedOptions;
   let output = "";
   var database = firebase.database(); 
@@ -242,38 +233,49 @@ var i = x.selectedIndex;
   // User is signed in.
   for (let i=0; i<collection.length; i++) {
 
-    output = collection[i].label;
-	if(x.selectedIndex == 0)
-	    ref.child(user.uid).child('Freshmen').push().set({
-			"Freshmenclass": output
-	});
-	if(x.selectedIndex == 1)
-		ref.child(user.uid).child('Sophomore').push().set({
-			"Sophomoreclass": output
-	});
-	if(x.selectedIndex == 2)
-		ref.child(user.uid).child('Junior').push().set({
-			"Juniorclass": output
-	});
-	if(x.selectedIndex == 3)
-		ref.child(user.uid).child('Senior').push().set({
-			"Seniorclass": output
-	});
+output = collection[i].label;
+
+
+					if(x.selectedIndex == 0)
+					ref.child(user.uid).child('Freshmen').push({
+						"Freshmenclass": output
+					
+					});
+					if(x.selectedIndex == 1)
+					ref.child(user.uid).child('Sophomore').push({
+						"Sophomoreclass": output
+					
+					});
+					if(x.selectedIndex == 2)
+					ref.child(user.uid).child('Junior').push({
+						"Juniorclass": output
+					
+					});
+					if(x.selectedIndex == 3)
+					ref.child(user.uid).child('Senior').push({
+						"Seniorclass": output
+					
+					});
 					
 }
-}
-	});
-/*
-	var freshTextArea = document.getElementById('display').value;
-	var sophTextArea = document.getElementById('display2').value;
-	var junTextArea = document.getElementById('display3').value;
-	var senTextArea = document.getElementById('display4').value;
 
-	localStorage.setItem('FreshmanClasses', freshTextArea);
-	localStorage.setItem('SophomoreClasses', sophTextArea);
-	localStorage.setItem('JuniorClasses', junTextArea);
-	localStorage.setItem('SeniorClasses', senTextArea);
-*/
+
+
+
+
+}
+
+	});
+
+  
+}
+
+
+
+
+
+
+
 // arguments: reference to select list, callback function (optional)
 function getSelectedOptions(sel, fn) {
 var opts = [], opt;
@@ -300,7 +302,10 @@ return opts;
 function callback(opt) {
 // display in textarea for this example
 var x = document.getElementById("classification");
+
 var i = x.selectedIndex;
+
+
 
 if(x.selectedIndex == 0){
 var display = document.getElementById('display');
@@ -323,8 +328,7 @@ if(x.selectedIndex == 3){
 var display = document.getElementById('display4');
 display.innerHTML += opt.text + '\n';
 }
-var display = document.getElementById('display5');
-display.innerHTML += opt.text + '\n';
+
 }
 
 document.getElementById('classsel').onchange = function(e) {
@@ -393,13 +397,15 @@ document.getElementById('demoForm').onsubmit = function(e) {
 // no callback function used this time
 var opts = getSelectedOptions( this.elements['classsel[]'] );
 
+
+
 var x = document.getElementById("classification");
 
 var i = x.selectedIndex;
 
 return false; 
 };
-
-//localStorage.setItem("SelectedClasses", opts);
- }
 </script>
+
+</body>
+</html>
