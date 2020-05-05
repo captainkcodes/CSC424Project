@@ -39,28 +39,17 @@ var i = x.selectedIndex;
 }
 }
 	});
+/*
+	var freshTextArea = document.getElementById('display').value;
+	var sophTextArea = document.getElementById('display2').value;
+	var junTextArea = document.getElementById('display3').value;
+	var senTextArea = document.getElementById('display4').value;
 
-	
-
-	orderButton.addEventListener("click", function() {
-		var freshTextArea = document.getElementById('display').value;
-		var sophTextArea = document.getElementById('display2').value;
-		var junTextArea = document.getElementById('display3').value;
-		var senTextArea = document.getElementById('display4').value;
-
-		localStorage.setItem('Freshman Classes', freshTextArea);
-		localStorage.setItem('Sophomore Classes', sophTextArea);
-		localStorage.setItem('Junior Classes', junTextArea);
-		localStorage.setItem('Senior Classes', senTextArea);
-
-		alert("Classes saved!");
-		console.log("Classes saved!")
-	} , false);
-
-}
-
-
-
+	localStorage.setItem('FreshmanClasses', freshTextArea);
+	localStorage.setItem('SophomoreClasses', sophTextArea);
+	localStorage.setItem('JuniorClasses', junTextArea);
+	localStorage.setItem('SeniorClasses', senTextArea);
+*/
 // arguments: reference to select list, callback function (optional)
 function getSelectedOptions(sel, fn) {
 var opts = [], opt;
@@ -186,3 +175,6 @@ var i = x.selectedIndex;
 
 return false; 
 };
+
+//localStorage.setItem("SelectedClasses", opts);
+ }

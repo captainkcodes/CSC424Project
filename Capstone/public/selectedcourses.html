@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Schedule Me</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css'>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    
+    <script src="https://use.fontawesome.com/1d70b9172e.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
+        <script src="/__/firebase/7.13.1/firebase-firestore.js"></script>
+        <script src="/__/firebase/7.13.1/firebase-functions.js"></script>
+        <script src="/__/firebase/7.13.1/firebase-storage.js"></script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="/__/firebase/7.9.3/firebase-app.js"></script>
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries} -->
+        <script src="/__/firebase/7.9.3/firebase-analytics.js"></script>
+        <!-- Initialize Firebase -->
+        <script src="/__/firebase/init.js"></script>
+        <script src="app.js"></script>
+  </head>
+
+  <body>
+    
+    <div id="bg"></div>
+
+		<header>
+            <h1> Selected Classes</h1>
+        
+            <nav>
+                <ul class="breadcrumb">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="predict.html">Recommendation</a></li>
+					<li><a href="events.html">Events</a></li>
+					<li><a href="mylists.html">To-Do Lists</a></li>
+					<li><a href="classes.html">Class Search</a></li>
+					<li><a onclick="signOut()" id="signOut" >  Log out </a></li>
+				</ul>
+            </nav>
+		</header>
+		
+		<main>
+        <p>Selected courses are: <b><span id="result"></span></b></p>
+        <script>
+            document.getElementById("result").innerHTML = localStorage.getItem("SelectedClasses");
+        </script>
+    </main>
+  </body>
+</html>
