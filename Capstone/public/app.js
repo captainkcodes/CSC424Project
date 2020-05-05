@@ -37,6 +37,39 @@ var firebaseConfig = {
             
         });
         
+
+
+
+        function removeclass(){
+
+            auth.onAuthStateChanged(function(user){
+                if(user){
+                    ref.child(user.uid).set({
+                        Freshmen: {
+                          "Freshmenclass": "tba"
+                          
+                        },
+                        Sophomore: {
+                            "Sophomoreclass": "tba"
+                            
+                          },
+                          Junior: {
+                            "Juniorclass": "tba"
+                            
+                          },
+                        Senior: {
+                            "Seniorclass": "tba"
+                          
+                        }
+                      });
+                }  
+            });
+
+        }
+
+
+
+
         function checkclasses(){   
             auth.onAuthStateChanged(function(user){
             
@@ -189,8 +222,8 @@ function googleLogin() {
             if(user){
                 window.location.href="landingpage.html" 
 
-
-                ref.child(user.uid).set({
+                if(snap.val() == undefined)
+                ref.child(user.uid).push({
                     Freshmen: {
                       "Freshmenclass": "tba"
                       
