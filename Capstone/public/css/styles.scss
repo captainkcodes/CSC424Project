@@ -29,21 +29,9 @@ $desktop: 840px; //perfect for switching from mobile to desktop
 }
 
 body {
-    font-family: monospace;
-    margin: 0;
+    font-family: monospace, 'Courier New';
     text-align: center;
-
-    header {
-        background-color: color(accent-color);
-        text-align: center;
-        padding: 5%;
-        border-style: double;
-        box-shadow: 10px 10px black;
-    }
-
-    header h1 {
-        font-family: "Satisfy";
-    }
+    font-size: 12pt;
 
     a {
         color: color(text-color);
@@ -54,373 +42,298 @@ body {
         color: color(accent-color);
     }
 
-    p {
+    h1 {
+        font-family: 'Satisfy', monospace;
+    }
+
+    header {
+        background-color: color(accent-color);
         text-align: center;
+        padding: 5%;
+        border-style: double;
+        box-shadow: 5px 5px black;
+    
+        nav {
+            ul.breadcrumb {
+                padding: 4px 8px;
+                list-style: none;
+                background: transparent;
+              }
+              
+              ul.breadcrumb li {display: inline;}
+              
+              ul.breadcrumb li+li:before {
+                padding: 4px;
+                color: color(text-color);
+                content: "/\00a0";
+              }
+              
+              ul.breadcrumb li a {color: color(link-color);}
+              
+              ul.breadcrumb li a:hover {
+                  color: color(accent-color);
+              }
+        }
     }
 }
 
 main {
-
-    padding-top: 15%;
+    font-size: 10pt;
+    padding-top: 5%;
     text-align: center;
     width: 100%;
 
     button {
-       width: 40%;
-       margin-left: 30%;
-       margin-right: 30%;
-       top: 50px;
-       text-align: center;
-       color: color(text-color);
-       padding: 20px;
+        padding: $padding;
+        border-radius: 12px;
+        color: color(primary);
+        background-color: color(btn-color);
+        transition: all .2s;
     }
 
-    nav {
-        background: transparent;
-        text-align: center;
-        display: block;
+    button:hover {
+        background-color: color(primary);
+        color: color(btn-color);
+        transition: all .2s;
     }
+
+    /*[Navigation in main instead
+    of in header]*/
+    ul.breadcrumb {
+        padding: 4px 8px;
+        list-style: none;
+        background: transparent;
+      }
+      
+      ul.breadcrumb li {display: inline;}
+      
+      ul.breadcrumb li+li:before {
+        padding: 4px;
+        color: color(text-color);
+        content: "/\00a0";
+      }
+      
+      ul.breadcrumb li a {color: color(link-color);}
+      
+      ul.breadcrumb li a:hover {
+          color: color(accent-color);
+      }
 
     form {
         width: 50%;
         margin: 2% 7%;
         display: inline-block;
+
+        input[type=text],
+        input[type=email],
+        input[type=password] {
+            margin-bottom: 20px;
+            margin-top: 10px;
+            width: 100%;
+            padding: 15px;
+        }
+
+        input[type=text]:focus,
+        input[type=email]:focus,
+        input[type=password]:focus {
+            border-color: color(btn-color);
+        }
+
+        input[type=submit] {
+            padding: $padding;
+            border-radius: 12px;
+            color: color(primary);
+            background-color: color(btn-color);
+            transition: all .2s;
+        }
+
+        input[type=submit]:hover {
+            background-color: color(primary);
+            color: color(btn-color);
+            transition: all .2s;
+        }
     }
 
-    input[type=text],
-    input[type=email],
-    input[type=password] {
-        margin-bottom: 20px;
-        margin-top: 10px;
-        width: 100%;
-        padding: 15px;
+    .iframe-container {
+        overflow: hidden;
+        padding-top: 56.25%;
+        position: relative;
+
+        iframe {
+            border: 0;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
     }
 
-    input[type=submit] {
-        background-color: color(btn-color);
-        border: none;
-        color: color(text-color);
-        padding: 16px 32px;
-        text-align: center;
-        font-size: 16px;
-        margin: 4px 2px;
-        opacity: 0.6;
-        transition: 0.3s;
-        display: inline-block;
-        text-decoration: none;
+    #worktodo-wrap {
+        box-sizing: border-box;
+        font-size: 0.9em;
+    }
+
+    #worktodo-wrap input[type=text] {
+        padding: 10px 8px;
+    }
+
+    #worktodo-wrap input[type=button],
+    #worktodo-wrap input[type=submit] {
+        padding: 8px 5px;
+        color: #fff;
+        background:#6cc9ff;
+        border: 2px solid #6cc9ff;
         cursor: pointer;
     }
 
-    input[type=submit]:hover {
-        background: color(accent-color);
-        opacity: 1;
+    /* [CLEARFIX] */
+    #worktodo-wrap .clearfix {
+        overflow: auto;
     }
 
-    section#demoForm {
+    #worktodo-wrap .clearfix::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
 
-        @include desktop{
-            justify-content: space-evenly;
-            align-content: space-between;
+
+    /* [WRAPPER] */
+    #worktodo-wrap {
+        max-width: 500px;
+        background: #f2f2f2;
+        padding: 20px;
+        margin: 0 auto;
+    }
+
+    /* [HEADER] */
+    #worktodo-wrap h2 {
+        font-size: 1.5em;
+        margin: 0;
+        color: #333;
+    }
+
+
+    /* [ADD] */
+    #worktodo-form {
+        margin: 10px 0;
+    }
+
+    #worktodo-form input {
+        display: block;
+        float: left;
+    }
+
+    #worktodo-form input[type=text] {
+        width: 85%;
+    }
+
+    #worktodo-form input[type=submit] {
+        width: 15%;
+        background: #22a4cf;
+        border: 2px solid #22a4cf;
+    }
+
+
+    /* [DELETE] */
+    #worktodo-del {}
+
+
+    /* [LIST ITEMS] */
+    #worktodo-list .clearfix {
+        margin-top: 8px;
+    }
+
+    #worktodo-list .clearfix div, #worktodo-list .clearfix input {
+        box-sizing: border-box;
+        float: left;
+        display: block;
+    }
+
+    #worktodo-list .item {
+        border: 1px solid #ddd;
+        background: #fff;
+        width: 80%;
+        padding: 10px;
+    }
+
+    #worktodo-list .item.cx {
+        background: #ffe1d7;
+        text-decoration: line-through;
+    }
+
+    #worktodo-list .item.done {
+        background: #dcffd7;
+    }
+
+    #worktodo-list .clearfix input {
+        width: 10%;
+    }
+
+    #worktodo-list input.bdone {
+        background: #4aa53d;
+        border: 2px solid #4aa53d;
+    }
+
+    @include desktop {
+        da1,db1,dc1,dd1 { 
+            position: relative;
+            border:1px;
+            float:left;
+            margin-top: 0.2%;
+            margin-left: 0.2%;
+            margin-right: 0.2%;
+        }
+        
+        da2,db2,dc2,dd2 { 
+            position: relative;
+            border:1px;
+            float:left;
+            margin-top: 3%;
+        }
+        
+        textarea {
+            width: 200px;
+        }
+        
+        
+        /* Aligning for second row*/
+        #selects{
+            float:left;
+            margin-top: 5%;
+            margin-left: 20%;
+        }
+        
+        #classification{
+            float:left;
+            margin-top: 7%;
+        }
+        
+        #classsel{
+            float:right;
+            margin-right: 40%;
+            margin-bottom: 5%;
+        }
+        
+        
+        #order{
+            float:left;
+            margin-top: 40%;
+            margin-bottom: 2%;
+            padding: $padding;
+            border-radius: 12px;
+            color: color(primary);
+            background-color: color(btn-color);
         }
 
+        #order:hover {
+            background-color: color(primary);
+            color: color(btn-color);
+        }
 
-   /* Global Button Styles */
-   button.animated-button.thar-one:before {
-    .animated-button:link, button.animated-button.thar-one:before {
-        .animated-button:visited {
-	position: relative;
-	display: block;
-	margin: 30px auto 0;
-	padding: 14px 15px;
-	color: color(text-color);
-	font-size:14px;
-	font-weight: bold;
-	text-align: center;
-	text-decoration: none;
-	text-transform: uppercase;
-	overflow: hidden;
-	letter-spacing: .08em;
-	border-radius: 0;
-	text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
-	-webkit-transition: all 1s ease;
-	-moz-transition: all 1s ease;
-	-o-transition: all 1s ease;
-	transition: all 1s ease;
-}
+        .iframe-container-4x3{
+            padding-top: 75%;
+        }
     }
-}
-button.animated-button.thar-one:before {
-    .animated-button:link:after, button.animated-button.thar-one:before {
-        .animated-button:visited:after {
-	content: "";
-	position: absolute;
-	height: 0%;
-	left: 50%;
-	top: 50%;
-	width: 150%;
-	z-index: -1;
-	-webkit-transition: all 0.75s ease 0s;
-	-moz-transition: all 0.75s ease 0s;
-	-o-transition: all 0.75s ease 0s;
-	transition: all 0.75s ease 0s;
-}
-    }
-}
-
-button.animated-button.thar-one:before {
-    .animated-button:link:hover, button.animated-button.thar-one:before {
-        .animated-button:visited:hover {
-            color: color(text-color);
-	text-shadow: none;
-}
-    }
-}
-button.animated-button.thar-one:before {
-    .animated-button:link:hover:after, button.animated-button.thar-one:before {
-        .animated-button:visited:hover:after {
-	height: 450%;
-}
-    }
-}
-}
-button.animated-button.thar-one:before {
-    .animated-button:link, button.animated-button.thar-one:before {
-        .animated-button:visited {
-	position: relative;
-	display: block;
-	margin: 30px auto 0;
-	padding: 14px 15px;
-	color: color(text-color);
-	font-size:14px;
-	border-radius: 0;
-	font-weight: bold;
-	text-align: center;
-	text-decoration: none;
-	text-transform: uppercase;
-	overflow: hidden;
-	letter-spacing: .08em;
-	text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
-	-webkit-transition: all 1s ease;
-	-moz-transition: all 1s ease;
-	-o-transition: all 1s ease;
-	transition: all 1s ease;
-}
-    }
-}
-
-button.animated-button.thar-one:before {
-    .animated-button.thar-one {
-	color: color(text-color);
-	cursor: pointer;
-	display: block;
-	position: relative;
-	border: 2px solid #F7CA18;
-	transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
-}
-}
-button.animated-button.thar-one:before {
-    .animated-button.thar-one:hover {
-	color: #000 !important;
-	background-color: transparent;
-	text-shadow: none;
-}
-}
-button.animated-button.thar-one:before {
-    .animated-button.thar-one:hover:before {
-	bottom: 0%;
-	top: auto;
-	height: 100%;
-}
-}
-button.animated-button.thar-one:before {
-	display: block;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	height: 0px;
-	width: 100%;
-	z-index: -1;
-	content: '';
-	color: #000 !important;
-	background: #F7CA18;
-	transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
-}
-button.animated-button.thar-two {
-	color: #fff;
-	cursor: pointer;
-	display: block;
-	position: relative;
-	border: 2px solid #F7CA18;
-	transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
-}
-button.animated-button.thar-two:hover {
-	color: #000 !important;
-	background-color: transparent;
-	text-shadow: ntwo;
-}
-button.animated-button.thar-two:hover:before {
-	top: 0%;
-	bottom: auto;
-	height: 100%;
-}
-
-button.animated-button.thar-two:before {
-	display: block;
-	position: absolute;
-	left: 0px;
-	bottom: 0px;
-	height: 0px;
-	width: 100%;
-	z-index: -1;
-	content: '';
-	color: #000 !important;
-	background: #F7CA18;
-	transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
-}
-
-    /*[FOR To-Do Lists]*/
-#worktodo-wrap
-{
-  box-sizing: border-box;
-  font-size: 0.9em;
-}
-
-#worktodo-wrap input[type=text]
-{
-  padding: 10px 8px;
-}
-
-#worktodo-wrap input[type=button],
-#worktodo-wrap input[type=submit]
-{
-  padding: 8px 5px;
-  color: #fff;
-  background:#6cc9ff;
-  border: 2px solid #6cc9ff;
-  cursor: pointer;
-}
-
-/* [CLEARFIX] */
-#worktodo-wrap .clearfix 
-{
-  overflow: auto;
-}
-
-#worktodo-wrap .clearfix::after
-{
-  content: "";
-  display: table;
-  clear: both;
-}
-
-
-/* [WRAPPER] */
-#worktodo-wrap
-{
-    max-width: 500px;
-    background: #f2f2f2;
-    padding: 20px;
-    margin: 0 auto;
-}
-
-/* [HEADER] */
-#worktodo-wrap h2
-{
-    font-size: 1.5em;
-    margin: 0;
-    color: #333;
-}
-
-
-/* [ADD] */
-#worktodo-form
-{
-    margin: 10px 0;
-}
-
-#worktodo-form input 
-{
-    display: block;
-    float: left;
-}
-
-#worktodo-form input[type=text]
-{
-    width: 85%;
-}
-
-#worktodo-form input[type=submit]
-{
-    width: 15%;
-    background: #22a4cf;
-    border: 2px solid #22a4cf;
-}
-
-
-/* [DELETE] */
-#worktodo-del {}
-
-
-/* [LIST ITEMS] */
-#worktodo-list .clearfix
-{
-    margin-top: 8px;
-}
-
-#worktodo-list .clearfix div, #worktodo-list .clearfix input
-{
-    box-sizing: border-box;
-    float: left;
-    display: block;
-}
-
-#worktodo-list .item
-{
-    border: 1px solid #ddd;
-    background: #fff;
-    width: 80%;
-    padding: 10px;
-}
-
-#worktodo-list .item.cx
-{
-    background: #ffe1d7;
-    text-decoration: line-through;
-}
-
-#worktodo-list .item.done
-{
-    background: #dcffd7;
-}
-
-#worktodo-list .clearfix input {
-    width: 10%;
-}
-
-#worktodo-list input.bdone
-{
-    background: #4aa53d;
-    border: 2px solid #4aa53d;
-}
-
-
-ul.breadcrumb {
-    padding: 8px 16px;
-    list-style: none;
-    background: transparent;
-  }
-  
-  ul.breadcrumb li {display: inline;}
-  
-  ul.breadcrumb li+li:before {
-    padding: 8px;
-    color: color(text-color);
-    content: "/\00a0";
-  }
-  
-  ul.breadcrumb li a {color: color(link-color);}
-  
-  ul.breadcrumb li a:hover {
-      color: color(accent-color);
-  }
 }

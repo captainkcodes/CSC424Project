@@ -1,23 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap");
-@import url("stylesheet.css");
-
 body {
-  font-family: monospace;
-  margin: 0;
-}
-
-body header {
-  background-color: #ffffff;
+  font-family: monospace, 'Courier New';
   text-align: center;
-  padding: 5%;
-  border-style: double;
-  -webkit-box-shadow: 10px 10px black;
-          box-shadow: 10px 10px black;
-}
-
-body header h1 {
-  font-family: "Satisfy";
+  font-size: 12pt;
 }
 
 body a {
@@ -29,27 +15,96 @@ body a:hover {
   color: #ffffff;
 }
 
+body h1 {
+  font-family: 'Satisfy', monospace;
+}
+
+body header {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 5%;
+  border-style: double;
+  -webkit-box-shadow: 5px 5px black;
+          box-shadow: 5px 5px black;
+}
+
+body header nav ul.breadcrumb {
+  padding: 4px 8px;
+  list-style: none;
+  background: transparent;
+}
+
+body header nav ul.breadcrumb li {
+  display: inline;
+}
+
+body header nav ul.breadcrumb li + li:before {
+  padding: 4px;
+  color: #420039;
+  content: "/\00a0";
+}
+
+body header nav ul.breadcrumb li a {
+  color: #d72638;
+}
+
+body header nav ul.breadcrumb li a:hover {
+  color: #ffffff;
+}
+
 main {
-  padding-top: 15%;
+  font-size: 10pt;
+  padding-top: 5%;
   text-align: center;
   width: 100%;
-  /* Global Button Styles */
+  /*[Navigation in main instead
+    of in header]*/
+  /* [CLEARFIX] */
+  /* [WRAPPER] */
+  /* [HEADER] */
+  /* [ADD] */
+  /* [DELETE] */
+  /* [LIST ITEMS] */
 }
 
 main button {
-  width: 40%;
-  margin-left: 30%;
-  margin-right: 30%;
-  top: 50px;
-  text-align: center;
-  color: #420039;
-  padding: 20px;
+  padding: 15px;
+  border-radius: 12px;
+  color: #12355b;
+  background-color: #ff570a;
+  -webkit-transition: all .2s;
+  transition: all .2s;
 }
 
-main nav {
+main button:hover {
+  background-color: #12355b;
+  color: #ff570a;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+main ul.breadcrumb {
+  padding: 4px 8px;
+  list-style: none;
   background: transparent;
-  text-align: center;
-  display: block;
+}
+
+main ul.breadcrumb li {
+  display: inline;
+}
+
+main ul.breadcrumb li + li:before {
+  padding: 4px;
+  color: #420039;
+  content: "/\00a0";
+}
+
+main ul.breadcrumb li a {
+  color: #d72638;
+}
+
+main ul.breadcrumb li a:hover {
+  color: #ffffff;
 }
 
 main form {
@@ -58,192 +113,64 @@ main form {
   display: inline-block;
 }
 
-main input[type=text],
-main input[type=email],
-main input[type=password] {
+main form input[type=text],
+main form input[type=email],
+main form input[type=password] {
   margin-bottom: 20px;
   margin-top: 10px;
   width: 100%;
   padding: 15px;
 }
 
-main input[type=submit] {
+main form input[type=text]:focus,
+main form input[type=email]:focus,
+main form input[type=password]:focus {
+  border-color: #ff570a;
+}
+
+main form input[type=submit] {
+  padding: 15px;
+  border-radius: 12px;
+  color: #12355b;
   background-color: #ff570a;
-  border: none;
-  color: #420039;
-  padding: 16px 32px;
-  text-align: center;
-  font-size: 16px;
-  margin: 4px 2px;
-  opacity: 0.6;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  display: inline-block;
-  text-decoration: none;
-  cursor: pointer;
+  -webkit-transition: all .2s;
+  transition: all .2s;
 }
 
-main input[type=submit]:hover {
-  background: #ffffff;
-  opacity: 1;
+main form input[type=submit]:hover {
+  background-color: #12355b;
+  color: #ff570a;
+  -webkit-transition: all .2s;
+  transition: all .2s;
 }
 
-@media (min-width: 840px) {
-  main section#demoForm {
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -ms-flex-line-pack: justify;
-        align-content: space-between;
-  }
-}
-
-main button.animated-button.thar-one:before .animated-button:link .animated-button:visited, main button.animated-button.thar-one:before button.animated-button.thar-one:before .animated-button:visited {
-  position: relative;
-  display: block;
-  margin: 30px auto 0;
-  padding: 14px 15px;
-  color: #420039;
-  font-size: 14px;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
+main .iframe-container {
   overflow: hidden;
-  letter-spacing: .08em;
-  border-radius: 0;
-  text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
-}
-
-main button.animated-button.thar-one:before .animated-button:link:after .animated-button:visited:after, main button.animated-button.thar-one:before button.animated-button.thar-one:before .animated-button:visited:after {
-  content: "";
-  position: absolute;
-  height: 0%;
-  left: 50%;
-  top: 50%;
-  width: 150%;
-  z-index: -1;
-  -webkit-transition: all 0.75s ease 0s;
-  transition: all 0.75s ease 0s;
-}
-
-main button.animated-button.thar-one:before .animated-button:link:hover .animated-button:visited:hover, main button.animated-button.thar-one:before button.animated-button.thar-one:before .animated-button:visited:hover {
-  color: #420039;
-  text-shadow: none;
-}
-
-main button.animated-button.thar-one:before .animated-button:link:hover:after .animated-button:visited:hover:after, main button.animated-button.thar-one:before button.animated-button.thar-one:before .animated-button:visited:hover:after {
-  height: 450%;
-}
-
-button.animated-button.thar-one:before .animated-button:link .animated-button:visited, button.animated-button.thar-one:before button.animated-button.thar-one:before .animated-button:visited {
+  padding-top: 56.25%;
   position: relative;
-  display: block;
-  margin: 30px auto 0;
-  padding: 14px 15px;
-  color: #420039;
-  font-size: 14px;
-  border-radius: 0;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  overflow: hidden;
-  letter-spacing: .08em;
-  text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
 }
 
-button.animated-button.thar-one:before .animated-button.thar-one {
-  color: #420039;
-  cursor: pointer;
-  display: block;
-  position: relative;
-  border: 2px solid #F7CA18;
-  -webkit-transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
-  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
-}
-
-button.animated-button.thar-one:before .animated-button.thar-one:hover {
-  color: #000 !important;
-  background-color: transparent;
-  text-shadow: none;
-}
-
-button.animated-button.thar-one:before .animated-button.thar-one:hover:before {
-  bottom: 0%;
-  top: auto;
+main .iframe-container iframe {
+  border: 0;
   height: 100%;
-}
-
-button.animated-button.thar-one:before {
-  display: block;
+  left: 0;
   position: absolute;
-  left: 0px;
-  top: 0px;
-  height: 0px;
+  top: 0;
   width: 100%;
-  z-index: -1;
-  content: '';
-  color: #000 !important;
-  background: #F7CA18;
-  -webkit-transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
-  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
 }
 
-button.animated-button.thar-two {
-  color: #fff;
-  cursor: pointer;
-  display: block;
-  position: relative;
-  border: 2px solid #F7CA18;
-  -webkit-transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
-  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
-}
-
-button.animated-button.thar-two:hover {
-  color: #000 !important;
-  background-color: transparent;
-  text-shadow: ntwo;
-}
-
-button.animated-button.thar-two:hover:before {
-  top: 0%;
-  bottom: auto;
-  height: 100%;
-}
-
-button.animated-button.thar-two:before {
-  display: block;
-  position: absolute;
-  left: 0px;
-  bottom: 0px;
-  height: 0px;
-  width: 100%;
-  z-index: -1;
-  content: '';
-  color: #000 !important;
-  background: #F7CA18;
-  -webkit-transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
-  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
-}
-
-/*[FOR To-Do Lists]*/
-#worktodo-wrap {
+main #worktodo-wrap {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 0.9em;
 }
 
-#worktodo-wrap input[type=text] {
+main #worktodo-wrap input[type=text] {
   padding: 10px 8px;
 }
 
-#worktodo-wrap input[type=button],
-#worktodo-wrap input[type=submit] {
+main #worktodo-wrap input[type=button],
+main #worktodo-wrap input[type=submit] {
   padding: 8px 5px;
   color: #fff;
   background: #6cc9ff;
@@ -251,111 +178,134 @@ button.animated-button.thar-two:before {
   cursor: pointer;
 }
 
-/* [CLEARFIX] */
-#worktodo-wrap .clearfix {
+main #worktodo-wrap .clearfix {
   overflow: auto;
 }
 
-#worktodo-wrap .clearfix::after {
+main #worktodo-wrap .clearfix::after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* [WRAPPER] */
-#worktodo-wrap {
+main #worktodo-wrap {
   max-width: 500px;
   background: #f2f2f2;
   padding: 20px;
   margin: 0 auto;
 }
 
-/* [HEADER] */
-#worktodo-wrap h2 {
+main #worktodo-wrap h2 {
   font-size: 1.5em;
   margin: 0;
   color: #333;
 }
 
-/* [ADD] */
-#worktodo-form {
+main #worktodo-form {
   margin: 10px 0;
 }
 
-#worktodo-form input {
+main #worktodo-form input {
   display: block;
   float: left;
 }
 
-#worktodo-form input[type=text] {
+main #worktodo-form input[type=text] {
   width: 85%;
 }
 
-#worktodo-form input[type=submit] {
+main #worktodo-form input[type=submit] {
   width: 15%;
   background: #22a4cf;
   border: 2px solid #22a4cf;
 }
 
-/* [DELETE] */
-/* [LIST ITEMS] */
-#worktodo-list .clearfix {
+main #worktodo-list .clearfix {
   margin-top: 8px;
 }
 
-#worktodo-list .clearfix div, #worktodo-list .clearfix input {
+main #worktodo-list .clearfix div, main #worktodo-list .clearfix input {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   float: left;
   display: block;
 }
 
-#worktodo-list .item {
+main #worktodo-list .item {
   border: 1px solid #ddd;
   background: #fff;
   width: 80%;
   padding: 10px;
 }
 
-#worktodo-list .item.cx {
+main #worktodo-list .item.cx {
   background: #ffe1d7;
   text-decoration: line-through;
 }
 
-#worktodo-list .item.done {
+main #worktodo-list .item.done {
   background: #dcffd7;
 }
 
-#worktodo-list .clearfix input {
+main #worktodo-list .clearfix input {
   width: 10%;
 }
 
-#worktodo-list input.bdone {
+main #worktodo-list input.bdone {
   background: #4aa53d;
   border: 2px solid #4aa53d;
 }
 
-ul.breadcrumb {
-  padding: 8px 16px;
-  list-style: none;
-  background: transparent;
-}
-
-ul.breadcrumb li {
-  display: inline;
-}
-
-ul.breadcrumb li + li:before {
-  padding: 8px;
-  color: #420039;
-  content: "/\00a0";
-}
-
-ul.breadcrumb li a {
-  color: #d72638;
-}
-
-ul.breadcrumb li a:hover {
-  color: #ffffff;
+@media (min-width: 840px) {
+  main {
+    /* Aligning for second row*/
+  }
+  main da1, main db1, main dc1, main dd1 {
+    position: relative;
+    border: 1px;
+    float: left;
+    margin-top: 0.2%;
+    margin-left: 0.2%;
+    margin-right: 0.2%;
+  }
+  main da2, main db2, main dc2, main dd2 {
+    position: relative;
+    border: 1px;
+    float: left;
+    margin-top: 3%;
+  }
+  main textarea {
+    width: 200px;
+  }
+  main #selects {
+    float: left;
+    margin-top: 5%;
+    margin-left: 20%;
+  }
+  main #classification {
+    float: left;
+    margin-top: 7%;
+  }
+  main #classsel {
+    float: right;
+    margin-right: 40%;
+    margin-bottom: 5%;
+  }
+  main #order {
+    float: left;
+    margin-top: 40%;
+    margin-bottom: 2%;
+    padding: 15px;
+    border-radius: 12px;
+    color: #12355b;
+    background-color: #ff570a;
+  }
+  main #order:hover {
+    background-color: #12355b;
+    color: #ff570a;
+  }
+  main .iframe-container-4x3 {
+    padding-top: 75%;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
