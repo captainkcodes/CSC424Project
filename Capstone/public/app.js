@@ -223,7 +223,7 @@ function googleLogin() {
                 window.location.href="landingpage.html" 
 
                 if(snap.val() == undefined)
-                ref.child(user.uid).push({
+                ref.child(user.uid).set({
                     Freshmen: {
                       "Freshmenclass": "tba"
                       
