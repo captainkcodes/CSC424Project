@@ -39,7 +39,11 @@
 		</header>
 
 		<main>
+
 			<form action="">
+
+				
+
 			<section id="demoForm">
 				<h1 style="font-family: monospace;">Freshmen</h1>
 					<textarea name="display" id="display" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea>
@@ -50,15 +54,15 @@
 				<h1 style="font-family: monospace;">Senior</h1>
 				<textarea name="display" id="display4" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea>
 
-						<br>
-					<br>
-				<button onclick="checkclasses()">
-					check saved classes
-				  </button>
-
-				  <button onclick="removeclass()">
-					remove saved classes
-				  </button>
+				<br>
+				
+					<button onclick="checkclasses()">
+						check saved classes
+					  </button>
+		
+					  <button onclick="removeclass()">
+						remove saved classes
+					  </button>
 
 			</section>
 
@@ -70,8 +74,19 @@
 					<option value="junior">Junior</option>
 					<option value="Senior">Senior</option>
 				</select>
-
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
 				<h1 style="font-family: monospace;">Please choose your courses. Tip: hold control to choose more than 1 course</h1>
+
+				
 				<select name="classsel[]" id="classsel" size="20" multiple>
 				<optgroup label="Freshman Classes">
 					<option value="MAT_167">Calculus I</option>
@@ -206,35 +221,36 @@
 
 			</select>
 			</section>
-		
-
-			<section id="submitBtn">
-				<button name="order" id="order" onclick="thebutton()">
+						
+				<button onclick="thebutton()">
 					Submit
 				  </button>
-			</section>
-			</form>
+			
+		</form>
+
+
+
 		</main>
 
+
 		<script>
-
-
-let orderButton = document.getElementById("order");
-let itemList = document.getElementById("classsel");
+//let itemList = document.getElementById("classsel");
 var x = document.getElementById("classification");
-
 var i = x.selectedIndex;
 
+//how submit works
  function thebutton() {
-  let collection = itemList.selectedOptions;
+  let collection = document.getElementById("classsel").selectedOptions;
   let output = "";
   var database = firebase.database(); 
   var ref = database.ref('users');
   var user = firebase.auth().currentUser;
 
+
+  //if user is online
   firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-  // User is signed in.
+  // search collection of selected items and post to firebase
   for (let i=0; i<collection.length; i++) {
 
 output = collection[i].label;
@@ -280,31 +296,31 @@ output = collection[i].label;
 
 
 
-// arguments: reference to select list, callback function (optional)
-function getSelectedOptions(sel, fn) {
-var opts = [], opt;
+// reference to select list, callback function
+function getSelectedOptions(selectlist, fn) {
+var classoptions = [], classoption;
 
 // loop through options in select list
-for (var i=0, len=sel.options.length; i<len; i++) {
-opt = sel.options[i];
+for (var i=0, len=selectlist.options.length; i<len; i++) {
+	classoption = selectlist.options[i];
 
 // check if selected
-if ( opt.selected ) {
+if ( classoption.selected ) {
 // add to array of option elements to return from this function
-opts.push(opt);
+classoptions.push(classoption);
 
-// invoke optional callback function if provided
+// invoke  callback function if provided
 if (fn) {
-	fn(opt);
+	fn(classoption);
 }
 }
 }
 
 // return array containing references to selected option elements
-return opts;
+return classoptions;
 }
-function callback(opt) {
-// display in textarea for this example
+function callback(classoption) {
+// display in textarea
 var x = document.getElementById("classification");
 
 var i = x.selectedIndex;
@@ -313,28 +329,29 @@ var i = x.selectedIndex;
 
 if(x.selectedIndex == 0){
 var display = document.getElementById('display');
-display.innerHTML += opt.text + '\n';
+display.innerHTML += classoption.text + '\n';
 }
 
 if(x.selectedIndex == 1 ){
 var display = document.getElementById('display2');
-display.innerHTML += opt.text + '\n';
+display.innerHTML += classoption.text + '\n';
 }
 
 
 if(x.selectedIndex == 2){
 var display = document.getElementById('display3');
-display.innerHTML += opt.text + '\n';
+display.innerHTML += classoption.text + '\n';
 }
 
 
 if(x.selectedIndex == 3){
 var display = document.getElementById('display4');
-display.innerHTML += opt.text + '\n';
+display.innerHTML += classoption.text + '\n';
 }
 
 }
 
+//if a option is choosen or changed reset
 document.getElementById('classsel').onchange = function(e) {
 
 var x = document.getElementById("classification");
@@ -349,9 +366,9 @@ display.innerHTML = ''; // reset
 // callback fn handles selected options
 getSelectedOptions(this, callback);
 
-// remove ', ' at end of string
-var str = display.innerHTML;
-display.innerHTML = str;
+
+//var str = display.innerHTML;
+//display.innerHTML = str;
 }
 
 if(x.selectedIndex == 1 ){
@@ -362,9 +379,8 @@ display.innerHTML = ''; // reset
 // callback fn handles selected options
 getSelectedOptions(this, callback);
 
-// remove ', ' at end of string
-var str = display.innerHTML;
-display.innerHTML = str;
+//var str = display.innerHTML;
+//display.innerHTML = str;
 }
 
 
@@ -377,8 +393,8 @@ display.innerHTML = ''; // reset
 getSelectedOptions(this, callback);
 
 // remove ', ' at end of string
-var str = display.innerHTML;
-display.innerHTML = str;
+//var str = display.innerHTML;
+//display.innerHTML = str;
 }
 
 
@@ -391,15 +407,16 @@ display.innerHTML = ''; // reset
 getSelectedOptions(this, callback);
 
 // remove ', ' at end of string
-var str = display.innerHTML;
-display.innerHTML = str;
+//var str = display.innerHTML;
+//display.innerHTML = str;
 }
 };
 
+// when items from demoForm onsubmit send selected classes
 document.getElementById('demoForm').onsubmit = function(e) {
 // reference to select list using this keyword and form elements collection
 // no callback function used this time
-var opts = getSelectedOptions( this.elements['classsel[]'] );
+var classoptions = getSelectedOptions( this.elements['classsel[]'] );
 
 
 
