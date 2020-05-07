@@ -1,30 +1,29 @@
-
 // Machine Learning
 // Nearest Neighbor Recommendations
 // classification-regression
 
 
-var data;
-var users;
+var dataset;
+var students; // number of students
 
 var resultP;
 var resultDivs = [];
 
 function preload() {
-  data = loadJSON('classdata.json');
+  dataset = loadJSON('classdata.json'); // dataset
 }
 
 function setup() {
   noCanvas();
-  users = {};
+  students = {};
 
   var dropdowns = [];
 //html
-  var titles = data.titles;
-  for (var i = 0; i < titles.length; i++) {
-    var div = createDiv(titles[i]);
+  var Classes = dataset.Classes;
+  for (var i = 0; i < Classes.length; i++) {
+    var div = createDiv(Classes[i]);
     var dropdown = createSelect('');
-    dropdown.title = titles[i];
+    dropdown.title = Classes[i];
     dropdown.option('no vote');
     dropdown.parent(div);
     dropdowns.push(dropdown);
@@ -34,18 +33,18 @@ function setup() {
   }
 
   var button = createButton('submit');
-  button.mousePressed(predictRatings);
+  button.mousePressed(predictVotes);
   resultP = createP('');
 //create class votings with dropdown menu
-  function predictRatings() {
+  function predictVotes() {
     var newUser = {};
     for (var i = 0; i < dropdowns.length; i++) {
       var title = dropdowns[i].title;
-      var rating = dropdowns[i].value();
-      if (rating == 'no vote') {
-        rating = null;
+      var vote= dropdowns[i].value();
+      if (vote== 'no vote') {
+        vote= null;
       }
-      newUser[title] = rating;
+      newUser[title] = vote;
     }
 //algorithm function call
     findNearestNeighbors(newUser);
@@ -58,15 +57,15 @@ function setup() {
     resultDivs = [];
 //clear results
     var similarityScores = {};
-    for (var i = 0; i < data.users.length; i++) {
-      var other = data.users[i];//students from dataset
+    for (var i = 0; i < dataset.students.length; i++) {
+      var other = dataset.students[i];//students from dataset
       var similarity = euclideanDistance(user, other); //compare simularities
       similarityScores[other.name] = similarity;
       
 
     }
  //compare students to findNearestNeighbors
-    data.users.sort(compareSimilarity);
+    dataset.students.sort(compareSimilarity);
 
     function compareSimilarity(a, b) {
       var score1 = similarityScores[a.name];
@@ -74,19 +73,19 @@ function setup() {
       return score2 - score1;
     }
 
-    for (var i = 0; i < data.titles.length; i++) { //for each class, title = the class data
-      var title = data.titles[i];
-      if (user[title] == null) {
+    for (var i = 0; i < dataset.Classes.length; i++) { //for each class, title = the class data
+      var title = dataset.Classes[i];
+      if (user[title] == null) { // if null 
         var k = 5;// 5 students
         var weightedSum = 0;
         var similaritySum = 0;
-        for (var j = 0; j < k; j++) { // calculate sum of votes
-          var name = data.users[j].name;
+        for (var j = 0; j < k; j++) { // calculate sum of votes from 5 students
+          var name = dataset.students[j].name;
           var sim = similarityScores[name];
-          var ratings = data.users[j];
-          var rating = ratings[title];
-          if (rating != null) {
-            weightedSum += rating * sim;
+          var ratings = dataset.students[j];
+          var vote= ratings[title];
+          if (vote!= null) {
+            weightedSum += vote* sim;
             similaritySum += sim;
           }
         }
@@ -121,16 +120,16 @@ function setup() {
   }
 }
 
-function euclideanDistance(ratings1, ratings2) {//determining simularies via votes in dataset
-  var titles = data.titles; //votes
+function euclideanDistance(votes1, votes2) {//determining simularies via votes in dataset
+  var Classes = dataset.Classes; //votes
 
   var sumSquares = 0;
-  for (var i = 0; i < titles.length; i++) { //for each class 
-    var title = titles[i];
-    var rating1 = ratings1[title];
-    var rating2 = ratings2[title];
-    if (rating1 != null && rating2 != null) {
-      var diff = rating1 - rating2;
+  for (var i = 0; i < Classes.length; i++) { //for each class 
+    var title = Classes[i];
+    var vote1 = votes1[title];
+    var vote2 = votes2[title];
+    if (vote1 != null && vote2 != null) {
+      var diff = vote1 - vote2;
       sumSquares += diff * diff;
     }
   }
