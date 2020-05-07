@@ -70,25 +70,24 @@ var firebaseConfig = {
 
 
 
-        function checkclasses(){   
+        function checkclasses(){  
+            
+            document.getElementById('display').innerHTML = ''; // reset
+            document.getElementById('display2').innerHTML = ''; // reset
+            document.getElementById('display3').innerHTML = ''; // reset
+            document.getElementById('display4').innerHTML = ''; // reset
             auth.onAuthStateChanged(function(user){
             
                 if(user){
-                    
-                    ref.child(user.uid).child('Freshmen').on("child_added", snap => {
-                       
-                        
-                        //console.log(snap.val()); 
-                       // console.log(snap.key); 
-                    }); 
+
                     
              
 
 ref.child(user.uid).child('Freshmen').on("child_added", function(data) {
    var newPlayer = data.val();
-   var x = document.getElementById("classification");
 
    if(newPlayer.Freshmenclass != undefined){
+       
    document.getElementById('display').innerHTML += "freshmen class: "+ newPlayer.Freshmenclass + "\n";
    
    }
@@ -96,8 +95,7 @@ ref.child(user.uid).child('Freshmen').on("child_added", function(data) {
 
 ref.child(user.uid).child('Sophomore').on("child_added", function(data) {
     var newPlayer = data.val();
-    var x = document.getElementById("classification");
-    
+
     if(newPlayer.Sophomoreclass != undefined){
     document.getElementById('display2').innerHTML += "Sophomoreclass: " + newPlayer.Sophomoreclass + "\n";
     }
@@ -107,20 +105,15 @@ ref.child(user.uid).child('Sophomore').on("child_added", function(data) {
 
 ref.child(user.uid).child('Junior').on("child_added", function(data) {
     var newPlayer = data.val();
-    var x = document.getElementById("classification");
-    
+ 
     if(newPlayer.Juniorclass != undefined){
     document.getElementById('display3').innerHTML += "Juniorclass: " + newPlayer.Juniorclass + "\n";
     }   
 
 });
 
-
-
 ref.child(user.uid).child('Senior').on("child_added", function(data) {
     var newPlayer = data.val();
-    var x = document.getElementById("classification");
-    
     if(newPlayer.Seniorclass != undefined){
     document.getElementById('display4').innerHTML += "Seniorclass:" + newPlayer.Seniorclass + "\n";
     }
@@ -130,25 +123,18 @@ ref.child(user.uid).child('Senior').on("child_added", function(data) {
                 }  
             });
 
-
-
-
     }
   
+
         function signUp(){
             var email = document.getElementById("email");
-            var password = document.getElementById("password");
-            
+            var password = document.getElementById("password");          
             const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
             promise.catch(e => alert(e.message));
-            
-        
-           
 
             auth.onAuthStateChanged(function(user){
                 if(user){
                     window.location.href="landingpage.html" 
-
 
                     ref.child(user.uid).set({
                         Freshmen: {
