@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rochester&display=swap");
 body {
   font-family: monospace, 'Courier New';
   text-align: center;
@@ -7,20 +8,25 @@ body {
 }
 
 body a {
-  color: #420039;
+  color: #2f0a28;
   text-decoration: none;
 }
 
 body a:hover {
-  color: #ffffff;
+  color: #cadbc0;
 }
 
 body h1 {
-  font-family: 'Satisfy', monospace;
+  font-family: 'Rochester', cursive;
+  font-size: 50pt;
+}
+
+body h2 {
+  font-size: 20pt;
 }
 
 body header {
-  background-color: #ffffff;
+  background-color: #cadbc0;
   text-align: center;
   padding: 5%;
   border-style: double;
@@ -40,16 +46,16 @@ body header nav ul.breadcrumb li {
 
 body header nav ul.breadcrumb li + li:before {
   padding: 4px;
-  color: #420039;
+  color: #2f0a28;
   content: "/\00a0";
 }
 
 body header nav ul.breadcrumb li a {
-  color: #d72638;
+  color: #dc5cc4;
 }
 
 body header nav ul.breadcrumb li a:hover {
-  color: #ffffff;
+  color: #cadbc0;
 }
 
 main {
@@ -71,14 +77,14 @@ main button {
   padding: 15px;
   border-radius: 12px;
   color: #12355b;
-  background-color: #ff570a;
+  background-color: #c94277;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
 
 main button:hover {
   background-color: #12355b;
-  color: #ff570a;
+  color: #c94277;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
@@ -95,16 +101,16 @@ main ul.breadcrumb li {
 
 main ul.breadcrumb li + li:before {
   padding: 4px;
-  color: #420039;
+  color: #2f0a28;
   content: "/\00a0";
 }
 
 main ul.breadcrumb li a {
-  color: #d72638;
+  color: #dc5cc4;
 }
 
 main ul.breadcrumb li a:hover {
-  color: #ffffff;
+  color: #cadbc0;
 }
 
 main form {
@@ -125,21 +131,21 @@ main form input[type=password] {
 main form input[type=text]:focus,
 main form input[type=email]:focus,
 main form input[type=password]:focus {
-  border-color: #ff570a;
+  border-color: #c94277;
 }
 
 main form input[type=submit] {
   padding: 15px;
   border-radius: 12px;
   color: #12355b;
-  background-color: #ff570a;
+  background-color: #c94277;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
 
 main form input[type=submit]:hover {
   background-color: #12355b;
-  color: #ff570a;
+  color: #c94277;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
@@ -298,11 +304,11 @@ main #worktodo-list input.bdone {
     padding: 15px;
     border-radius: 12px;
     color: #12355b;
-    background-color: #ff570a;
+    background-color: #c94277;
   }
   main #order:hover {
     background-color: #12355b;
-    color: #ff570a;
+    color: #c94277;
   }
   main .iframe-container-4x3 {
     padding-top: 75%;

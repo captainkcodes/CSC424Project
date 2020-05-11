@@ -41,13 +41,13 @@
 		<main>
 			<form action="predict.html">
 			<section id="demoForm">
-				<h1 style="font-family: monospace;">Freshmen</h1>
+				<h2 style="font-family: monospace;">Freshmen</h2>
 					<textarea name="display" id="display" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea>
-				<h1 style="font-family: monospace;">Sophomore</h1>
+				<h2 style="font-family: monospace;">Sophomore</h2>
 					<textarea name="display" id="display2" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea>
-				<h1 style="font-family: monospace;">Junior</h1>
+				<h2 style="font-family: monospace;">Junior</h2>
 					<textarea name="display" id="display3" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea>
-				<h1 style="font-family: monospace;">Senior</h1>
+				<h2 style="font-family: monospace;">Senior</h2>
 				<textarea name="display" id="display4" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea>
 
 						<br>
@@ -63,7 +63,7 @@
 			</section>
 
 			<section id="selects">
-				<h1 style="font-family: monospace;"> Please choose a year to enter your classes: </h1>
+				<h2 style="font-family: monospace;"> Please choose a year to enter your classes: </h2>
 				<select id="classification" size = "4">
 					<option value="freshman">Freshman</option>
 					<option value="sophomore">Sophomore</option>
@@ -71,7 +71,7 @@
 					<option value="Senior">Senior</option>
 				</select>
 
-				<h1 style="font-family: monospace;">Please choose your courses. Tip: hold control to choose more than 1 course</h1>
+				<h2 style="font-family: monospace;">Please choose your courses. Tip: hold control to choose more than 1 course</h2>
 				<select name="classsel[]" id="classsel" size="20" multiple>
 				<optgroup label="Freshman Classes">
 					<option value="MAT_167">Calculus I</option>
@@ -206,14 +206,10 @@
 
 			</select>
 			</section>
-		</form>
-
-			<section id="submitBtn">
 				<button name="order" id="order" onclick="thebutton()">
 					Submit
 				  </button>
-			</section>
-
+			</form>
 		</main>
 
 		<script>

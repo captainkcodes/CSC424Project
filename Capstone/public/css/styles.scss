@@ -1,17 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rochester&display=swap');
 
 $color-scheme: (
     //background
     primary: #12355b,
     //buttons
-    btn-color: #ff570a,
+    btn-color: #c94277,
     //text
-    text-color: #420039,
+    text-color: #2f0a28,
     //links
-    link-color: #d72638,
+    link-color: lighten(#2f0a28, 50%),
     //accents (links hover)
-    accent-color: #ffffff
+    accent-color: #cadbc0
 );
 
 $padding: 15px;
@@ -43,7 +44,12 @@ body {
     }
 
     h1 {
-        font-family: 'Satisfy', monospace;
+        font-family: 'Rochester', cursive;
+        font-size: 50pt;
+    }
+
+    h2 {
+        font-size: 20pt;
     }
 
     header {
