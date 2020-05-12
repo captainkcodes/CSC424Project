@@ -39,8 +39,14 @@
 		</header>
 
 		<main>
+			<button onclick="checkclasses()">
+				check saved classes
+			  </button>
 
-			<form action="">
+			  <button onclick="removeclass()">
+				remove saved classes
+			  </button>
+			<form>
 
 				
 
@@ -53,19 +59,11 @@
 					<textarea name="display" id="display3" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea>
 				<h1 style="font-family: monospace;">Senior</h1>
 				<textarea name="display" id="display4" placeholder="view select list value(s) onchange" cols="30" rows="20" readonly></textarea>
-
-				<br>
-				
-					<button onclick="checkclasses()">
-						check saved classes
-					  </button>
-		
-					  <button onclick="removeclass()">
-						remove saved classes
-					  </button>
-
 			</section>
-
+			<br>
+				
+	
+			
 			<section id="selects">
 				<h1 style="font-family: monospace;"> Please choose a year to enter your classes: </h1>
 				<select id="classification" size = "4">
@@ -222,13 +220,13 @@
 			</select>
 			</section>
 						
-				<button onclick="thebutton()">
-					Submit
-				  </button>
+
 			
 		</form>
 
-
+		<button onclick="thebutton()">
+			Submit
+		  </button>
 
 		</main>
 
