@@ -8,12 +8,12 @@ body {
 }
 
 body a {
-  color: #2f0a28;
+  color: #403d58;
   text-decoration: none;
 }
 
 body a:hover {
-  color: #cadbc0;
+  color: #66d7d1;
 }
 
 body h1 {
@@ -26,7 +26,7 @@ body h2 {
 }
 
 body header {
-  background-color: #cadbc0;
+  background-color: #66d7d1;
   text-align: center;
   padding: 5%;
   border-style: double;
@@ -46,16 +46,16 @@ body header nav ul.breadcrumb li {
 
 body header nav ul.breadcrumb li + li:before {
   padding: 4px;
-  color: #2f0a28;
+  color: #403d58;
   content: "/\00a0";
 }
 
 body header nav ul.breadcrumb li a {
-  color: #dc5cc4;
+  color: #403d58;
 }
 
 body header nav ul.breadcrumb li a:hover {
-  color: #cadbc0;
+  color: #66d7d1;
 }
 
 main {
@@ -76,15 +76,15 @@ main {
 main button {
   padding: 15px;
   border-radius: 12px;
-  color: #12355b;
-  background-color: #c94277;
+  color: #dbd56e;
+  background-color: #fc7753;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
 
 main button:hover {
-  background-color: #12355b;
-  color: #c94277;
+  background-color: #dbd56e;
+  color: #fc7753;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
@@ -101,16 +101,16 @@ main ul.breadcrumb li {
 
 main ul.breadcrumb li + li:before {
   padding: 4px;
-  color: #2f0a28;
+  color: #403d58;
   content: "/\00a0";
 }
 
 main ul.breadcrumb li a {
-  color: #dc5cc4;
+  color: #403d58;
 }
 
 main ul.breadcrumb li a:hover {
-  color: #cadbc0;
+  color: #66d7d1;
 }
 
 main form {
@@ -131,21 +131,21 @@ main form input[type=password] {
 main form input[type=text]:focus,
 main form input[type=email]:focus,
 main form input[type=password]:focus {
-  border-color: #c94277;
+  border-color: #fc7753;
 }
 
 main form input[type=submit] {
   padding: 15px;
   border-radius: 12px;
-  color: #12355b;
-  background-color: #c94277;
+  color: #dbd56e;
+  background-color: #fc7753;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
 
 main form input[type=submit]:hover {
-  background-color: #12355b;
-  color: #c94277;
+  background-color: #dbd56e;
+  color: #fc7753;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
@@ -303,12 +303,12 @@ main #worktodo-list input.bdone {
     margin-bottom: 2%;
     padding: 15px;
     border-radius: 12px;
-    color: #12355b;
-    background-color: #c94277;
+    color: #dbd56e;
+    background-color: #fc7753;
   }
   main #order:hover {
-    background-color: #12355b;
-    color: #c94277;
+    background-color: #dbd56e;
+    color: #fc7753;
   }
   main .iframe-container-4x3 {
     padding-top: 75%;

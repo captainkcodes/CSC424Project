@@ -4,15 +4,15 @@
 
 $color-scheme: (
     //background
-    primary: #12355b,
+    primary: #dbd56e, //straw
     //buttons
-    btn-color: #c94277,
+    btn-color: #fc7753, //outrageous orange
     //text
-    text-color: #2f0a28,
+    text-color: #403d58, //independence
     //links
-    link-color: lighten(#2f0a28, 50%),
+    link-color: #403d58, //also independence
     //accents (links hover)
-    accent-color: #cadbc0
+    accent-color: #66d7d1 //medium turquoise
 );
 
 $padding: 15px;
